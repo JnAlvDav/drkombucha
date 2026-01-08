@@ -1,10 +1,12 @@
 :root {
-  --primary-teal: #6DB3A8;
+  --primary-vintage: #8B7355;
+  --accent-gold: #D4A574;
   --cream: #F5F1E8;
-  --dark-gray: #3D3D3D;
-  --light-gray: #9E9E9E;
+  --light-beige: #EFE8D8;
+  --dark-text: #2C2C2C;
+  --text-gray: #555555;
   --white: #FFFFFF;
-  --gold: #D4AF37;
+  --border-light: #E0D5C8;
 }
 
 * {
@@ -18,289 +20,240 @@ html {
 }
 
 body {
-  background-color: var(--cream);
-  color: var(--dark-gray);
+  background: linear-gradient(135deg, #F5F1E8 0%, #EFE8D8 100%);
+  color: var(--dark-text);
   font-family: 'Georgia', 'Times New Roman', serif;
   line-height: 1.6;
 }
 
 a {
-  color: var(--primary-teal);
+  color: var(--primary-vintage);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--dark-gray);
+  color: var(--accent-gold);
 }
 
 /* HERO SECTION */
 .hero {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, rgba(245, 241, 232, 0.9) 0%, rgba(109, 179, 168, 0.05) 100%),
-              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="40" fill="none" stroke="%23DDD" stroke-width="1" opacity="0.1"/></pattern></defs><rect width="1200" height="800" fill="%23F5F1E8"/><rect width="1200" height="800" fill="url(%23pattern)"/></svg>');
-  background-attachment: fixed;
-  text-align: center;
+  gap: var(--spacing-2xl);
+  padding: var(--spacing-2xl);
+  background: linear-gradient(135deg, #F5F1E8 0%, #EFE8D8 100%);
   position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139, 115, 85, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
 }
 
 .hero-content {
-  z-index: 10;
-  max-width: 600px;
-}
-
-.hero-logo {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 2rem;
-}
-
-.hero-content h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  color: var(--dark-gray);
-  letter-spacing: 3px;
-  margin-bottom: 1rem;
-  font-family: 'Arial', sans-serif;
-  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .hero-content .tagline {
-  font-size: 1.5rem;
-  color: var(--primary-teal);
-  margin-bottom: 1.5rem;
-  font-family: 'Arial', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  color: var(--text-gray);
   font-weight: 600;
 }
 
-.hero-content .subtitle {
-  font-size: 1rem;
-  color: var(--light-gray);
-  margin-bottom: 2rem;
-  line-height: 1.8;
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-family: 'Georgia', serif;
 }
 
-.cta-button {
+.hero-content p.subtitle {
+  font-size: 1.5rem;
+  color: var(--text-gray);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero-content p.description {
+  font-size: 1rem;
+  color: var(--text-gray);
+  margin-top: 0.5rem;
+  max-width: 400px;
+}
+
+.hero-content a {
   display: inline-block;
-  padding: 1.2rem 2.5rem;
-  background-color: var(--primary-teal);
+  padding: 1rem 2.5rem;
+  background-color: var(--primary-vintage);
   color: white;
-  border: none;
   border-radius: 50px;
   font-weight: 600;
   font-size: 1rem;
-  cursor: pointer;
   transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  width: fit-content;
+  margin-top: 1rem;
+  border: 2px solid var(--primary-vintage);
 }
 
-.cta-button:hover {
-  background-color: var(--dark-gray);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.hero-content a:hover {
+  background-color: transparent;
+  color: var(--primary-vintage);
+}
+
+.hero-image {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* BENEFITS SECTION */
 .benefits {
   padding: 4rem 2rem;
   background-color: var(--white);
+}
+
+.benefits h2,
+.flavors h2,
+.testimonials h2,
+.pack-intro h2 {
+  font-size: 2.5rem;
+  color: var(--dark-text);
+  margin-bottom: 3rem;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+}
+
+.benefits-grid,
+.flavors-grid,
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.benefits h2 {
-  font-size: 2.5rem;
-  color: var(--primary-teal);
-  margin-bottom: 3rem;
-  text-align: center;
-  font-weight: 600;
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.benefit-card {
-  background: var(--cream);
-  border: 2px solid var(--primary-teal);
-  border-radius: 10px;
+.benefit-card,
+.flavor-card,
+.testimonial-card {
   padding: 2rem;
+  background-color: var(--cream);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-gold);
   transition: all 0.3s ease;
-  text-align: center;
 }
 
-.benefit-card:hover {
-  box-shadow: 0 8px 20px rgba(109, 179, 168, 0.2);
+.benefit-card:hover,
+.flavor-card:hover,
+.testimonial-card:hover {
+  box-shadow: 0 5px 20px rgba(139, 115, 85, 0.15);
   transform: translateY(-5px);
-  border-color: var(--dark-gray);
 }
 
-.benefit-card h3 {
-  color: var(--primary-teal);
+.benefit-card h3,
+.flavor-card h3,
+.testimonial-card h3 {
   font-size: 1.3rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
+  color: var(--primary-vintage);
+  margin-bottom: 0.5rem;
+  font-family: 'Georgia', serif;
 }
 
-.benefit-card p {
-  color: var(--light-gray);
+.benefit-card p,
+.flavor-card p,
+.testimonial-card p {
+  color: var(--text-gray);
   font-size: 0.95rem;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* FLAVORS SECTION */
 .flavors {
   padding: 4rem 2rem;
-  background-color: var(--cream);
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.flavors h2 {
-  font-size: 2.5rem;
-  color: var(--primary-teal);
-  margin-bottom: 3rem;
-  text-align: center;
-  font-weight: 600;
-}
-
-.flavors-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.flavor-card {
-  background: var(--white);
-  border: 2px solid var(--primary-teal);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.flavor-card:hover {
-  box-shadow: 0 12px 30px rgba(109, 179, 168, 0.25);
-  transform: translateY(-8px);
-}
-
-.flavor-image {
-  width: 100%;
-  height: 350px;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(109, 179, 168, 0.1) 0%, rgba(245, 241, 232) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.flavor-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.flavor-content {
-  padding: 1.5rem;
-}
-
-.flavor-card h3 {
-  color: var(--primary-teal);
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
-  font-weight: 600;
-}
-
-.flavor-card p {
-  color: var(--light-gray);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* CTA SECTION */
-.pack-intro {
-  padding: 4rem 2rem;
-  background-color: var(--primary-teal);
-  color: white;
-  text-align: center;
-}
-
-.pack-intro h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  font-weight: 600;
-}
-
-.pack-intro p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-}
-
-.pack-intro .cta-button {
-  background-color: white;
-  color: var(--primary-teal);
-}
-
-.pack-intro .cta-button:hover {
-  background-color: var(--cream);
+  background-color: var(--light-beige);
 }
 
 /* TESTIMONIALS SECTION */
 .testimonials {
   padding: 4rem 2rem;
   background-color: var(--white);
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.testimonials h2 {
-  font-size: 2.5rem;
-  color: var(--primary-teal);
-  margin-bottom: 3rem;
-  text-align: center;
-  font-weight: 600;
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.testimonial-card {
-  background: var(--cream);
-  border-left: 5px solid var(--primary-teal);
-  padding: 2rem;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.testimonial-card p {
-  color: var(--light-gray);
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-  font-style: italic;
 }
 
 .testimonial-card .author {
-  color: var(--primary-teal);
   font-weight: 600;
-  font-size: 0.9rem;
+  color: var(--primary-vintage);
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* PACK INTRO SECTION */
+.pack-intro {
+  padding: 4rem 2rem;
+  background-color: var(--light-beige);
+}
+
+.pack-intro h2 {
+  margin-bottom: 2rem;
+}
+
+.pack-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pack-header p {
+  font-size: 1.1rem;
+  color: var(--text-gray);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* FOOTER */
 footer {
-  background-color: var(--dark-gray);
+  background-color: var(--primary-vintage);
   color: white;
   text-align: center;
   padding: 2rem;
@@ -313,11 +266,18 @@ footer p {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+    min-height: auto;
+    gap: 2rem;
+  }
+  
   .hero-content h1 {
     font-size: 2.5rem;
   }
   
-  .hero-content .tagline {
+  .hero-content p.subtitle {
     font-size: 1.2rem;
   }
   
@@ -325,12 +285,17 @@ footer p {
   .flavors h2,
   .testimonials h2,
   .pack-intro h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .benefits-grid,
   .flavors-grid,
   .testimonials-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .hero::before,
+  .hero::after {
+    display: none;
   }
 }
