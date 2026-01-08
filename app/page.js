@@ -1,3 +1,5 @@
+'use client';
+
 export default function Home() {
   const handleWhatsApp = () => {
     window.open('https://wa.me/?text=Hola%20Dr.%20Kombucha%20Quiero%20información%20sobre%20el%20Pack%20de%20Introducción', '_blank');
