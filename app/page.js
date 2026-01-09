@@ -7,25 +7,43 @@ export default function Page() {
   return (
     <main className="page">
       {/* HERO SECTION */}
+      {/* HERO SECTION */}
       <section className="hero">
-        <div className="hero-content">
-          <div className="tagline">SABOR ARTESANAL DEL PUERTO</div>
-          <h1>Dr. Kombucha</h1>
-          <p className="subtitle">Kombucha artesanal elaborada en Puerto Vallarta, Jalisco, México.</p>
-          <p className="description">Un remedio probiótico que sienta bien.</p>
-          <a href="https://wa.me/523221978144?text=Hola%20Dr.%20Kombucha,%20me%20interesa%20el%20pack%20de%20introducci%C3%B3n." className="cta-button">
-            Ver Pack de Introducción
+        <div className="hero-wrapper">
+          {/* Logo */}
+          <div className="hero-logo">
+            <img
+              src="/images/logo.png"
+              alt="Dr. Kombucha Logo"
+              className="logo-img"
+            />
+          </div>
+
+          {/* Title H1 */}
+          <h1 className="hero-title">DR. KOMBUCHA</h1>
+
+          {/* Subtitle */}
+          <p className="hero-subtitle">Remedio probiótico</p>
+
+          {/* Main Product Image */}
+          <div className="hero-product">
+            <Image
+              src="/images/hero/botellas.png"
+              alt="Dr. Kombucha - Tres Botellas"
+              width={400}
+              height={500}
+              priority
+              className="product-img"
+            />
+          </div>
+
+          {/* CTA Button */}
+          <a
+            href="https://wa.me/523221978144?text=Hola%20Dr.%20Kombucha,%20me%20interesa%20el%20pack%20de%20introducci%C3%B3n."
+            className="cta-button-hero"
+          >
+            Pedir por WhatsApp
           </a>
-        </div>
-        <div className="hero-image">
-          <Image
-            src="/images/hero/scientist.png"
-            alt="Dr. Kombucha - Científico"
-            width={500}
-            height={600}
-            priority
-            className="hero-img"
-          />
         </div>
       </section>
 
