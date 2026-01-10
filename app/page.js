@@ -6,38 +6,27 @@ import './page.css';
 export default function Page() {
   return (
     <main className="page">
-      {/* HERO SECTION */}
-      {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-wrapper">
-          {/* Logo */}
           <div className="hero-logo">
             <img
-              src="/images/logo.png"
+              src="/images/hero/logotipo -nuevo1.png"
               alt="Dr. Kombucha Logo"
               className="logo-img"
             />
           </div>
-
-          {/* Title H1 */}
           <h1 className="hero-title">DR. KOMBUCHA</h1>
-
-          {/* Subtitle */}
-          <p className="hero-subtitle">Remedio probiótico</p>
-
-          {/* Main Product Image */}
+          <p className="hero-subtitle">Remedio probiótico artesanal supervisado con rigor científico</p>
           <div className="hero-product">
             <Image
-              src="/images/hero/botellas.png"
-              alt="Dr. Kombucha - Tres Botellas"
+              src="/images/hero/hero.png"
+              alt="Selección Especial Dr. Kombucha"
               width={400}
               height={500}
               priority
               className="product-img"
             />
           </div>
-
-          {/* CTA Button */}
           <a
             href="https://wa.me/523221978144?text=Hola%20Dr.%20Kombucha,%20me%20interesa%20el%20pack%20de%20introducci%C3%B3n."
             className="cta-button-hero"
@@ -46,125 +35,82 @@ export default function Page() {
           </a>
         </div>
       </section>
-
-      {/* BENEFICIOS */}
       <section className="benefits">
-        <h2>Beneficios</h2>
-        <div className="benefits-grid">
-          <div className="benefit-card">
-            <h3>Apoyo a tus defensas naturales</h3>
-            <p>Elaborada a partir de fermentación con probióticos y compuestos con potencial antioxidante.</p>
-          </div>
-          <div className="benefit-card">
-            <h3>Mejora de la digestión</h3>
-            <p>Contiene microorganismos y enzimas derivados de la fermentación que favorecen la salud digestiva.</p>
-          </div>
-          <div className="benefit-card">
-            <h3>Protección antioxidante</h3>
-            <p>Los ácidos orgánicos y polifenoles originados del té favorecen la actividad antioxidante.</p>
-          </div>
-          <div className="benefit-card">
-            <h3>Sensación de energía</h3>
-            <p>A base de té, aporta vitaminas del complejo B y minerales presentes en la materia prima.</p>
-          </div>
-          <div className="benefit-card">
-            <h3>Apoyo a depuración</h3>
-            <p>Ácidos orgánicos y antioxidantes favorecen procesos naturales de depuración del organismo.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* SABORES */}
-      <section className="flavors">
-        <h2>Sabores del Puerto</h2>
-        
-        <div className="flavors-grid">
-          <div className="flavor-card">
-            <div className="flavor-image">
-              <Image
-                src="/images/hero/granada.png"
-                alt="Granada"
-                width={400}
-                height={500}
-              />
+        <div className="section-container">
+          <h2>Fundamentos de Salud</h2>
+          <div className="benefits-grid">
+            <div className="benefit-card">
+              <h3>Refuerzo Inmunológico</h3>
+              <p>La fermentación controlada potencia los compuestos antioxidantes naturales del té para fortalecer tus defensas.</p>
             </div>
-            <div className="flavor-content">
-              <h3>Granada</h3>
-              <p>Notas frutales ligeras con toque fresco y color característico.</p>
+            <div className="benefit-card">
+              <h3>Optimización Digestiva</h3>
+              <p>Los microorganismos vivos y las enzimas orgánicas favorecen el equilibrio sistémico de la flora intestinal.</p>
             </div>
-          </div>
-
-          <div className="flavor-card">
-            <div className="flavor-image">
-              <Image
-                src="/images/hero/mango.png"
-                alt="Mango"
-                width={400}
-                height={500}
-              />
-            </div>
-            <div className="flavor-content">
-              <h3>Mango</h3>
-              <p>Sabor tropical del puerto, con dulzor moderado y final refrescante.</p>
-            </div>
-          </div>
-
-          <div className="flavor-card">
-            <div className="flavor-image">
-              <Image
-                src="/images/hero/natural.png"
-                alt="Natural"
-                width={400}
-                height={500}
-              />
-            </div>
-            <div className="flavor-content">
-              <h3>Natural</h3>
-              <p>Perfil limpio y ácido-suave, ideal para quienes prueban kombucha por primera vez.</p>
+            <div className="benefit-card">
+              <h3>Energía Metabólica</h3>
+              <p>Aporta vitaminas del complejo B y minerales esenciales mediante una extracción natural sin aditivos químicos.</p>
             </div>
           </div>
         </div>
       </section>
-
-      {/* PACK INTRO */}
-      <section className="pack-intro">
-        <h2>Pack de Introducción</h2>
-        <div className="pack-content">
-          <div className="pack-image">
+      <section className="doctor-section">
+        <div className="process-container">
+          <div className="process-image">
             <Image
-              src="/images/hero/hero.png"
-              alt="Pack de 3 Botellas"
-              width={600}
+              src="/images/hero/scientist.png"
+              alt="Proceso de supervisión Dr. Kombucha"
+              width={500}
               height={500}
+              className="rounded-image"
             />
           </div>
-          <div className="pack-info">
-            <p>Selección de 3 sabores para conocer el perfil completo.</p>
-            <a href="https://wa.me/523221978144" className="cta-button">
-              Pedir por WhatsApp
-            </a>
+          <div className="process-text">
+            <h2>Precisión Médica en cada Botella</h2>
+            <p>Como especialista en imagenología clínica entiendo que los detalles invisibles son los más importantes para la salud. Dr. Kombucha nace del compromiso de aplicar ese mismo rigor analítico al proceso de fermentación artesanal en Puerto Vallarta.</p>
+            <p className="highlight">Nuestro método asegura una densidad probiótica óptima y un perfil bioquímico equilibrado para el consumo diario.</p>
           </div>
         </div>
       </section>
-
-      {/* TESTIMONIOS */}
-      <section className="testimonials">
-        <h2>Opiniones</h2>
-        <div className="testimonials-grid">
-          <div className="testimonial-card">
-            <p>"Refrescante y ligera, diferente a un refresco industrial."</p>
-            <p className="author">— Cliente local</p>
-          </div>
-          <div className="testimonial-card">
-            <p>"Perfecto para el calor del puerto, sin ser empalagosa."</p>
-            <p className="author">— Consumidor frecuente</p>
-          </div>
-          <div className="testimonial-card">
-            <p>"Se nota el cuidado y la atención al detalle."</p>
-            <p className="author">— Recomendación</p>
+      <section className="flavors">
+        <div className="section-container">
+          <h2>Sabores del Puerto</h2>
+          <div className="flavors-grid">
+            <div className="flavor-card">
+              <div className="flavor-image">
+                <Image src="/images/hero/granada.png" alt="Granada" width={300} height={400} />
+              </div>
+              <h3>Granada</h3>
+              <p>Una infusión frutal con notas refrescantes y un alto potencial antioxidante.</p>
+            </div>
+            <div className="flavor-card">
+              <div className="flavor-image">
+                <Image src="/images/hero/mango.png" alt="Mango y Coco" width={300} height={400} />
+              </div>
+              <h3>Mango y Coco</h3>
+              <p>La combinación tropical clásica del puerto con un balance de dulzor moderado.</p>
+            </div>
+            <div className="flavor-card">
+              <div className="flavor-image">
+                <Image src="/images/hero/natural.png" alt="Natural" width={300} height={400} />
+              </div>
+              <h3>Original Natural</h3>
+              <p>El perfil más puro de nuestra kombucha diseñado para quienes buscan la esencia del fermento.</p>
+            </div>
           </div>
         </div>
       </section>
+      <footer className="footer">
+        <div className="footer-content">
+          <img src="/images/hero/logotipo -nuevo1.png" alt="Dr. Kombucha" className="footer-logo" />
+          <p>Kombucha de Grado Artesanal Profesional</p>
+          <p>Puerto Vallarta Jalisco México</p>
+          <div className="footer-cta">
+            <a href="https://wa.me/523221978144" className="cta-small">Contacto Directo</a>
+          </div>
+          <p className="copyright">© 2026 Dr. Kombucha Derechos Reservados</p>
+        </div>
+      </footer>
     </main>
   );
 }
