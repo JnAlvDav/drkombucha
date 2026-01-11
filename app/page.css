@@ -304,3 +304,21 @@ img {
     page-break-inside: avoid;
   }
 }
+
+/* SPECIAL OFFER SECTION - Dark teal background */
+.special-offer {
+  background: linear-gradient(135deg, #2EA898 0%, #30B5A3 100%);
+  color: var(--white);
+}
+
+.special-offer h2 {
+  color: var(--white);
+}
+
+.special-offer h3 {
+  color: var(--white);
+}
+
+.special-offer p {
+  color: var(--white);
+}
