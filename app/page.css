@@ -419,3 +419,391 @@ body {
     font-size: 1.5rem;
   }
 }
+
+/* NEW SECTIONS STYLING */
+
+/* Kombucha Info Section */
+.kombucha-info {
+  padding: 60px 20px;
+  background: var(--light-bg);
+  text-align: center;
+}
+
+.kombucha-info h2 {
+  font-size: 2.5rem;
+  color: var(--primary-vintage);
+  margin-bottom: 30px;
+}
+
+.info-text {
+  font-size: 1.1rem;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Doctor Section Improvements */
+.doctor-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.doctor-image {
+  text-align: center;
+}
+
+.doctor-text h2 {
+  font-size: 2rem;
+  color: var(--primary-vintage);
+  margin-bottom: 25px;
+  line-height: 1.3;
+}
+
+.doctor-text p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* Mission Section */
+.mission {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #F4E8D0 0%, #E8D9C0 100%);
+  text-align: center;
+}
+
+.mission h2 {
+  font-size: 2.5rem;
+  color: var(--primary-vintage);
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mission p {
+  font-size: 1rem;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+}
+
+/* Special Offer Section */
+.special-offer {
+  padding: 80px 20px;
+  background: var(--primary-vintage);
+  color: var(--white);
+  text-align: center;
+}
+
+.special-offer h2 {
+  font-size: 2.5rem;
+  color: var(--accent-gold);
+  margin-bottom: 40px;
+}
+
+.offer-content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 50px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.offer-content h3 {
+  font-size: 1.8rem;
+  color: var(--accent-gold);
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.price-info {
+  margin-bottom: 30px;
+}
+
+.regular-price {
+  font-size: 0.95rem;
+  color: #D0D0D0;
+  text-decoration: line-through;
+  margin-bottom: 10px;
+}
+
+.special-price {
+  font-size: 3rem;
+  color: var(--accent-gold);
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.offer-description {
+  font-size: 1rem;
+  color: #E8D9C0;
+  margin-bottom: 20px;
+}
+
+/* CTA Buttons - Enhanced */
+.cta-button {
+  display: inline-block;
+  padding: 14px 35px;
+  background: var(--accent-gold);
+  color: var(--primary-vintage);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid var(--accent-gold);
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.cta-button:hover {
+  background: transparent;
+  color: var(--accent-gold);
+  transform: translateY(-3px);
+}
+
+.cta-button-large {
+  display: inline-block;
+  padding: 16px 45px;
+  background: var(--accent-gold);
+  color: var(--primary-vintage);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 2px solid var(--accent-gold);
+  cursor: pointer;
+}
+
+.cta-button-large:hover {
+  background: transparent;
+  color: var(--accent-gold);
+  transform: translateY(-3px);
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 80px 20px;
+  background: var(--light-bg);
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  color: var(--primary-vintage);
+  margin-bottom: 25px;
+}
+
+.testimonials-intro {
+  font-size: 1rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  line-height: 1.8;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid var(--accent-gold);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.testimonial-author {
+  font-size: 0.95rem;
+  color: var(--primary-vintage);
+  font-weight: 700;
+}
+
+.testimonials-cta-text {
+  font-size: 1rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+}
+
+/* FAQ Section */
+.faq {
+  padding: 80px 20px;
+  background: white;
+}
+
+.faq h2 {
+  font-size: 2.5rem;
+  color: var(--primary-vintage);
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  padding: 30px;
+  background: var(--light-bg);
+  border-radius: 10px;
+  border-left: 4px solid var(--accent-gold);
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  color: var(--primary-vintage);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.faq-item p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Final CTA Section */
+.final-cta {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #3D2817 0%, #2C1810 100%);
+  color: var(--white);
+  text-align: center;
+}
+
+.final-cta h2 {
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.final-cta p {
+  font-size: 1.2rem;
+  color: var(--accent-gold);
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button-final {
+  display: inline-block;
+  padding: 18px 50px;
+  background: var(--accent-gold);
+  color: var(--primary-vintage);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  border: 3px solid var(--accent-gold);
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-button-final:hover {
+  background: transparent;
+  color: var(--accent-gold);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+}
+
+/* Footer Contact Links */
+.footer-contact {
+  margin: 25px 0;
+}
+
+.contact-link {
+  display: inline-block;
+  padding: 10px 0;
+  margin: 0 15px;
+  color: #D9C9B0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.contact-link:hover {
+  color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+/* Benefits CTA and Flavors CTA */
+.benefits-cta,
+.flavors-cta {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Hero Tagline */
+.hero-tagline {
+  font-size: 1rem;
+  color: #E8D9C0;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+/* Responsive Design - Media Queries */
+@media (max-width: 768px) {
+  .doctor-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .offer-content {
+    padding: 30px;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mission h2,
+  .special-offer h2,
+  .testimonials h2,
+  .faq h2 {
+    font-size: 2rem;
+  }
+  
+  .special-price {
+    font-size: 2.2rem;
+  }
+  
+  .final-cta h2 {
+    font-size: 1.8rem;
+  }
+}
