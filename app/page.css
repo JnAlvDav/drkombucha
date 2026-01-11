@@ -807,3 +807,277 @@ body {
     font-size: 1.8rem;
   }
 }
+
+
+/* DECORATIVE BACKGROUND ENHANCEMENTS */
+
+/* Add decorative circular patterns to hero */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 300px;
+  height: 300px;
+  border: 3px solid rgba(212, 175, 55, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  bottom: 15%;
+  left: 8%;
+  width: 250px;
+  height: 250px;
+  border: 2px solid rgba(45, 80, 22, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Add decorative elements to kombucha-info */
+.kombucha-info::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 10%;
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgba(139, 69, 19, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.kombucha-info::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  right: 10%;
+  width: 180px;
+  height: 180px;
+  border: 2px solid rgba(212, 175, 55, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Add decorative elements to benefits section */
+.benefits::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: 5%;
+  width: 220px;
+  height: 220px;
+  border: 2px dashed rgba(139, 69, 19, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Add decorative corner elements */
+.section-container {
+  position: relative;
+}
+
+.benefits .section-container::before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: -60px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Doctor section decorative elements */
+.doctor-section::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 280px;
+  height: 280px;
+  border: 2px solid rgba(45, 80, 22, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.doctor-section::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: 8%;
+  width: 240px;
+  height: 240px;
+  border: 2px solid rgba(212, 175, 55, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Flavors section decorative elements */
+.flavors::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  width: 200px;
+  height: 200px;
+  border: 1px dotted rgba(139, 69, 19, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.flavors::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: 12%;
+  width: 260px;
+  height: 260px;
+  border: 2px solid rgba(45, 80, 22, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Mission section decorative */
+.mission::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 180px;
+  height: 180px;
+  border: 2px solid rgba(139, 69, 19, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.mission::after {
+  content: '';
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  width: 220px;
+  height: 220px;
+  border: 1px dashed rgba(212, 175, 55, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Special offer decorative elements */
+.special-offer::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: 8%;
+  width: 300px;
+  height: 300px;
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.special-offer::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  width: 250px;
+  height: 250px;
+  border: 1px dotted rgba(212, 175, 55, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Testimonials decorative */
+.testimonials::before {
+  content: '';
+  position: absolute;
+  top: 8%;
+  right: 5%;
+  width: 240px;
+  height: 240px;
+  border: 2px solid rgba(139, 69, 19, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.testimonials::after {
+  content: '';
+  position: absolute;
+  bottom: 12%;
+  left: 10%;
+  width: 200px;
+  height: 200px;
+  border: 1px dashed rgba(212, 175, 55, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* FAQ section decorative */
+.faq::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 12%;
+  width: 220px;
+  height: 220px;
+  border: 2px solid rgba(139, 69, 19, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.faq::after {
+  content: '';
+  position: absolute;
+  bottom: 8%;
+  right: 8%;
+  width: 280px;
+  height: 280px;
+  border: 1px dotted rgba(212, 175, 55, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Final CTA decorative */
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 300px;
+  height: 300px;
+  border: 2px solid rgba(212, 175, 55, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.final-cta::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 260px;
+  height: 260px;
+  border: 1px dashed rgba(212, 175, 55, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Ensure sections have position relative for pseudo-elements */
+.kombucha-info,
+.benefits,
+.doctor-section,
+.flavors,
+.mission,
+.special-offer,
+.testimonials,
+.faq,
+.final-cta {
+  position: relative;
+  overflow: hidden;
+}
