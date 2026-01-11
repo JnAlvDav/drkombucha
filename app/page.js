@@ -10,7 +10,7 @@ export default function Page() {
         <div className="hero-wrapper">
           <div className="hero-logo">
             <img
-              src="/images/hero/logotipo -nuevo1.png"
+              src="/images/hero/logotipo-nuevo1.png"
               alt="Dr. Kombucha Logo"
               className="logo-img"
             />
@@ -102,7 +102,7 @@ export default function Page() {
       </section>
       <footer className="footer">
         <div className="footer-content">
-          <img src="/images/hero/logotipo -nuevo1.png" alt="Dr. Kombucha" className="footer-logo" />
+          <img src="/images/hero/logotipo-nuevo1.png" alt="Dr. Kombucha" className="footer-logo" />
           <p>Kombucha de Grado Artesanal Profesional</p>
           <p>Puerto Vallarta Jalisco México</p>
           <div className="footer-cta">
