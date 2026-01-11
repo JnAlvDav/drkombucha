@@ -80,7 +80,7 @@ section.soft-bg {
 }
 
 section.dark-bg {
-  background-color: #2A2420;
+  background: linear-gradient(135deg, #2EA898 0%, #30B5A3 100%);
   color: var(--white);
 }
 
