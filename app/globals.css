@@ -5,10 +5,10 @@
 /* Ajustes base de la landing */
 html,
 body {
-  @apply bg-brand-cream text-brand-dark;
+  @apply bg-brand-bg text-brand-text;
 }
 
 body {
   margin: 0;
-  font-family: theme("fontFamily.bricolage");
+  font-family: theme("fontFamily.briklace");
 }
