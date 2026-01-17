@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:static": "next build && echo 'Static export complete. Check the out/ folder.'",
     "start": "next start"
   },
   "dependencies": {
