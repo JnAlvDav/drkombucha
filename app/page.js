@@ -14,25 +14,30 @@ export default function Page() {
       <section className="hero">
         <div className="hero-wrapper">
           <div className="hero-logo">
-            <img
-              src="/images/hero/logotipo-nuevo1.png"
-              alt="Dr. Kombucha Logo"
-              className="logo-img"
-            />
+            <picture>
+              <source srcSet="/images/hero/logotipo-nuevo1.webp" type="image/webp" />
+              <img
+                src="/images/hero/logotipo-nuevo1.png"
+                alt="Dr. Kombucha Logo"
+                className="logo-img"
+              />
+            </picture>
           </div>
           <h1 className="hero-title">DR. KOMBUCHA</h1>
           <p className="hero-subtitle">REMEDIO PROBIÓTICO</p>
           <p className="hero-tagline">Tu dosis diaria de bienestar. Sabor artesanal del Puerto.</p>
           
           <div className="hero-product">
-            <Image
-              src="/images/hero/hero.png"
-              alt="Selección Especial Dr. Kombucha"
-              width={400}
-              height={500}
-              priority
-              className="product-img"
-            />
+            <picture>
+              <source srcSet="/images/hero/hero.webp" type="image/webp" />
+              <img
+                src="/images/hero/hero.png"
+                alt="Selección Especial Dr. Kombucha"
+                width="400"
+                height="500"
+                className="product-img"
+              />
+            </picture>
           </div>
           
           <a
@@ -95,13 +100,16 @@ export default function Page() {
         <div className="section-container">
           <div className="doctor-content">
             <div className="doctor-image">
-              <Image
-                src="/images/hero/scientist.png"
-                alt="Dr. Kombucha - Rigor Científico"
-                width={500}
-                height={500}
-                className="rounded-image"
-              />
+              <picture>
+                <source srcSet="/images/hero/scientist.webp" type="image/webp" />
+                <img
+                  src="/images/hero/scientist.png"
+                  alt="Dr. Kombucha - Rigor Científico"
+                  width="500"
+                  height="500"
+                  className="rounded-image"
+                />
+              </picture>
             </div>
             <div className="doctor-text">
               <h2>Dr. Kombucha</h2>
@@ -269,7 +277,10 @@ export default function Page() {
       {/* FOOTER */}
       <footer className="footer">
         <div className="footer-content">
-          <img src="/images/hero/logotipo-nuevo1.png" alt="Dr. Kombucha" className="footer-logo" />
+          <picture>
+            <source srcSet="/images/hero/logotipo-nuevo1.webp" type="image/webp" />
+            <img src="/images/hero/logotipo-nuevo1.png" alt="Dr. Kombucha" className="footer-logo" />
+          </picture>
           <h3>DR. KOMBUCHA</h3>
           <p className="footer-tagline">Remedio Probiótico Artesanal</p>
           
