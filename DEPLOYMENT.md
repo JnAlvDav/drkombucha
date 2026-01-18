@@ -2,12 +2,64 @@
 
 Este documento describe cómo desplegar el sitio estático de Dr. Kombucha en Hostinger.
 
+## Despliegue Automático con GitHub Actions
+
+El repositorio incluye un workflow de GitHub Actions que automáticamente construye y despliega el sitio a Hostinger cuando se hace push a la rama `main`.
+
+### Configurar Secrets en GitHub
+
+Para que el despliegue automático funcione, necesitas configurar los siguientes secrets en tu repositorio de GitHub:
+
+1. Ve a tu repositorio en GitHub
+2. Navega a **Settings** > **Secrets and variables** > **Actions**
+3. Haz clic en **New repository secret** y añade los siguientes secrets:
+
+| Secret | Descripción | Ejemplo |
+|--------|-------------|---------|
+| `FTP_HOST` | Servidor FTP de Hostinger | `ftp.tudominio.com` o IP del servidor |
+| `FTP_USERNAME` | Tu usuario FTP de Hostinger | `usuario@tudominio.com` |
+| `FTP_PASSWORD` | Tu contraseña FTP | `tu_contraseña_segura` |
+| `FTP_REMOTE_PATH` | Ruta remota en el servidor | `public_html/` o `/` |
+
+**Nota sobre SFTP**: Si necesitas usar SFTP en lugar de FTP, puedes reemplazar la acción `SamKirkland/FTP-Deploy-Action` en el archivo `.github/workflows/deploy.yml` por una que soporte SFTP, como `wlixcc/SFTP-Deploy-Action`.
+
+### Cómo Funciona el Workflow
+
+El workflow se ejecuta automáticamente cuando:
+- Se hace push a la rama `main`
+
+Pasos que realiza:
+1. Checkout del código
+2. Configuración de Node.js 18
+3. Instalación de dependencias (`npm ci`)
+4. Build del sitio estático (`npm run build`)
+5. Despliegue de la carpeta `out/` a Hostinger vía FTP
+
+### Verificar el Despliegue
+
+Para comprobar el estado del despliegue:
+1. Ve a la pestaña **Actions** en tu repositorio de GitHub
+2. Verás el workflow "Build and Deploy to Hostinger" en ejecución o completado
+3. Haz clic en el workflow para ver los logs detallados de cada paso
+4. Si hay errores, los logs te indicarán qué salió mal
+
+### Archivo .htaccess
+
+El repositorio incluye un archivo `.htaccess` que se desplegará automáticamente con el sitio. Este archivo configura:
+- **Cache de navegador**: Para mejorar el rendimiento de assets estáticos
+- **Compresión gzip**: Para reducir el tamaño de transferencia
+- **Soporte WebP**: Sirve automáticamente imágenes WebP cuando el navegador las soporte
+- **DirectoryIndex**: Configura `index.html` como archivo raíz
+
 ## Archivos Generados
 
-- **`out/`**: Directorio con el sitio estático completo
-- **`drkombucha-hostinger.zip`**: Archivo ZIP del sitio listo para subir (15MB)
+- **`out/`**: Directorio con el sitio estático completo (generado automáticamente por el workflow)
+- **`.htaccess`**: Archivo de configuración de Apache incluido en el repositorio
+- **`drkombucha-hostinger.zip`**: Archivo ZIP del sitio listo para subir (15MB) - solo para despliegue manual
 
-## Pasos para Desplegar en Hostinger
+## Pasos para Despliegue Manual en Hostinger
+
+> **Nota**: El despliegue automático con GitHub Actions (descrito arriba) es el método recomendado. Usa este método manual solo si necesitas desplegar sin usar el workflow automático.
 
 ### 1. Construir el Sitio Localmente (si es necesario)
 

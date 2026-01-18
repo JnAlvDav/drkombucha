@@ -1,0 +1,32 @@
+# Habilitar cache de navegador para assets estáticos
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 1 hour"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
+
+# Comprimir (gzip)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+</IfModule>
+
+# Forzar index.html como raíz
+DirectoryIndex index.html
+
+# Intentar servir .webp cuando exista y el cliente lo soporte
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Solo para imágenes con extensiones jpg/jpeg/png
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteCond %{REQUEST_FILENAME} (.+)\.(jpe?g|png)$
+  RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+  RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,L]
+</IfModule>
+
+# Asegurar tipo MIME para webp
+AddType image/webp .webp
