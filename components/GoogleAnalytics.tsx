@@ -12,6 +12,13 @@ export default function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps)
     return null;
   }
 
+  // Validate measurementId format (G-XXXXXXXXXX where X is alphanumeric)
+  const isValidFormat = /^G-[A-Z0-9]{10}$/i.test(measurementId);
+  if (!isValidFormat) {
+    console.error(`Invalid Google Analytics Measurement ID format: ${measurementId}`);
+    return null;
+  }
+
   return (
     <>
       <Script
