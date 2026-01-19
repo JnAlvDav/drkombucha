@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Hero from '../components/Hero';
 import './page.css';
 
 export default function Page() {
@@ -10,6 +11,13 @@ export default function Page() {
 
   return (
     <main className="page">
+      <Hero 
+        title="DR. KOMBUCHA - REMEDIO PROBIÓTICO"
+        lead="Tu dosis diaria de bienestar. Sabor artesanal del Puerto."
+        ctaText="Pedir ahora"
+        ctaHref="https://wa.me/523221978144?text=¡Hola!%20Estoy%20interesado%20en%20el%20paquete%20de%20introducción%20de%20Dr.%20Kombucha."
+      />
+      
       {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-wrapper">
