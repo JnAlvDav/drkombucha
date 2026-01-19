@@ -1,4 +1,5 @@
 import "./globals.css";
+import GoogleAnalytics from '../components/GoogleAnalytics';
 
 export const metadata = {
   title: "Dr. Kombucha | Kombucha artesanal en Puerto Vallarta",
@@ -46,7 +47,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>{
+        <GoogleAnalytics />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,0 +1,31 @@
+'use client';
+
+import React from 'react';
+import Script from 'next/script';
+
+type Props = {
+  GA_MEASUREMENT_ID: string;
+};
+
+export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: Props) {
+  return (
+    <>
+      <Script
+        strategy="afterinteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterinteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `,
+        }}
+      />
+    </>
+  );
+}
