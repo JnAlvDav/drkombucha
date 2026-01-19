@@ -24,13 +24,6 @@ export const metadata = {
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Dr. Kombucha | Kombucha artesanal en Puerto Vallarta",
-    description:
-      "Kombucha artesanal elaborada en Puerto Vallarta, Jalisco. Fermentación cuidada, sabores naturales y entrega local.",
-    images: ["https://drkombucha.net/images/hero/kombucha-bottles.webp"],
-  },
   robots: {
     index: true,
     follow: true,
