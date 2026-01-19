@@ -11,12 +11,12 @@ export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: Props) {
   return (
     <>
       <Script
-        strategy="afterinteractive"
+        strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
       />
       <Script
         id="google-analytics"
-        strategy="afterinteractive"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
