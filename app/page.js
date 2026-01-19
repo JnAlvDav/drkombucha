@@ -11,52 +11,13 @@ export default function Page() {
 
   return (
     <main className="page">
-      {/* NEW HERO COMPONENT */}
+      {/* HERO COMPONENT */}
       <Hero 
         title="Dr. Kombucha - Remedio Probiótico"
         lead="Tu dosis diaria de bienestar. Kombucha artesanal elaborada en Puerto Vallarta con ingredientes naturales y cero químicos."
         ctaText="Ordenar ahora"
         ctaHref="https://wa.me/523221978144?text=¡Hola!%20Estoy%20interesado%20en%20el%20paquete%20de%20introducción%20de%20Dr.%20Kombucha."
       />
-      
-      {/* HERO SECTION */}
-      <section className="hero">
-        <div className="hero-wrapper">
-          <div className="hero-logo">
-            <picture>
-              <source srcSet="/images/hero/logotipo-nuevo1.webp" type="image/webp" />
-              <img
-                src="/images/hero/logotipo-nuevo1.png"
-                alt="Dr. Kombucha Logo"
-                className="logo-img"
-              />
-            </picture>
-          </div>
-          <h1 className="hero-title">DR. KOMBUCHA</h1>
-          <p className="hero-subtitle">REMEDIO PROBIÓTICO</p>
-          <p className="hero-tagline">Tu dosis diaria de bienestar. Sabor artesanal del Puerto.</p>
-          
-          <div className="hero-product">
-            <picture>
-              <source srcSet="/images/hero/hero.webp" type="image/webp" />
-              <img
-                src="/images/hero/hero.png"
-                alt="Selección Especial Dr. Kombucha"
-                width="400"
-                height="500"
-                className="product-img"
-              />
-            </picture>
-          </div>
-          
-          <a
-            href="https://wa.me/523221978144?text=¡Hola!%20Estoy%20interesado%20en%20el%20paquete%20de%20introducción%20de%20Dr.%20Kombucha."
-            className="cta-button-hero"
-          >
-            Pedir ahora
-          </a>
-        </div>
-      </section>
 
       {/* WHAT IS KOMBUCHA SECTION */}
       <section className="kombucha-info">
