@@ -5,7 +5,7 @@ export default function Hero({ title, lead, ctaText = 'Ordenar ahora', ctaHref =
     <section className="hero container">
       <div>
         <p className="kicker">Kombucha artesanal · Puerto Vallarta</p>
-        <h1 className="hero-title font-playfair">{title || 'Kombucha artesanal, viva y natural'}</h1>
+        <h1 className="hero-title">{title || 'Kombucha artesanal, viva y natural'}</h1>
         <p className="hero-lead">{lead || 'Fermentación cuidada, sabores naturales y entrega local. Prueba nuestros sabores de temporada.'}</p>
         <div>
           <a href={ctaHref} className="hero-cta">
