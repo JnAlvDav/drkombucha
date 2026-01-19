@@ -47,7 +47,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body>{
+      <body>
         <GoogleAnalytics />
         {children}
       </body>
