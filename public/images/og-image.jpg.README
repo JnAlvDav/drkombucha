@@ -1,0 +1,15 @@
+# Open Graph Image Placeholder
+
+Please add your Open Graph image at this location: `public/images/og-image.jpg`
+
+## Recommended Size
+- **Width**: 1200px
+- **Height**: 630px
+- **Format**: JPG or PNG
+- **Aspect Ratio**: 1.91:1
+
+## Notes
+- This image will be displayed when the site is shared on social media platforms (Facebook, Twitter, LinkedIn, etc.)
+- Make sure the image is optimized for web (compressed but good quality)
+- The image should represent your brand and content effectively
+- Keep important content centered as some platforms may crop the edges

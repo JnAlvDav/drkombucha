@@ -1,6 +1,8 @@
 import "./globals.css";
+import GoogleAnalytics from "../components/GoogleAnalytics";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Dr. Kombucha | Kombucha artesanal en Puerto Vallarta",
   description:
     "Kombucha artesanal elaborada en Puerto Vallarta, Jalisco. Fermentación cuidada, sabores naturales y entrega local.",
@@ -16,7 +18,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://drkombucha.net/images/hero/kombucha-bottles.webp",
+        url: "https://drkombucha.net/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Dr. Kombucha - Kombucha artesanal",
@@ -28,7 +30,7 @@ export const metadata = {
     title: "Dr. Kombucha | Kombucha artesanal en Puerto Vallarta",
     description:
       "Kombucha artesanal elaborada en Puerto Vallarta, Jalisco. Fermentación cuidada, sabores naturales y entrega local.",
-    images: ["https://drkombucha.net/images/hero/kombucha-bottles.webp"],
+    images: ["https://drkombucha.net/images/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -43,10 +45,17 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        <GoogleAnalytics measurementId="G-XXXXXXXXXX" />
+        {children}
+      </body>
     </html>
   );
 }
