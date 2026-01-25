@@ -641,3 +641,86 @@ p {
 
 
 /* Force rebuild */
+
+
+/* === Dr Kombucha · Design cleanup (NO content changes) === */
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1f2933;
+  --color-muted: #6b7280;
+
+  /* Accent color (can be adjusted) */
+  --color-accent: #2f8f6b;
+  --color-accent-soft: #e6f4ee;
+
+  --max-width: 1200px;
+  --text-max-width: 720px;
+
+  --section-padding-desktop: 100px;
+  --section-padding-mobile: 56px;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+
+  --line-height-body: 1.65;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: var(--line-height-body);
+}
+
+section {
+  padding: var(--section-padding-desktop) 20px;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: var(--section-padding-mobile) 16px;
+  }
+}
+
+.container,
+.wrapper,
+.content {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  max-width: var(--text-max-width);
+  color: var(--color-muted);
+}
+
+h1, h2, h3 {
+  margin-bottom: 24px;
+  color: var(--color-text);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+button,
+.btn,
+a.button {
+  background-color: var(--color-accent);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  border: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover,
+.btn:hover,
+a.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
