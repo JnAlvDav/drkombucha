@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Hero from '../components/Hero';
 import './page.css';
 
 export default function Page() {
@@ -10,6 +11,7 @@ export default function Page() {
 
   return (
     <main className="page">
+      <Hero title="Dr. Kombucha — Sabor y salud" lead="Kombucha artesanal elaborada en Puerto Vallarta. Fermentación cuidada y sabores naturales." />
       {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-wrapper">
