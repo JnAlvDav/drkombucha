@@ -1,8 +1,99 @@
-/* Restored to commit ec50b2e state */
+:root {
+--color-bg: #f9f9f9;  /* Off-white background for a minimal style */
+--color-text: #333333; /* Slightly muted black for better readability */
+--color-muted: #555555; /* Dark gray for secondary text */
 
-/* Add your CSS styles below */
+/* New blue-green accent color */
+--color-accent: #4CAF9E;
+--color-accent-hover: #3F9185;
+--color-accent-soft: #EAF7F5;
+
+--max-width: 1180px;
+--text-max-width: 680px;
+
+--section-padding-desktop: 96px;
+--section-padding-mobile: 48px;
+
+--radius-sm: 4px;
+--radius-md: 12px;
+
+--line-height-body: 1.75; /* Better spacing between lines */
+--font-main: 'Roboto', sans-serif;
+--font-title: 'Montserrat', sans-serif;
+}
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: var(--line-height-body);
+}
+
+section {
+  padding: var(--section-padding-desktop) 24px;
+  border-radius: var(--radius-md);
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: var(--section-padding-mobile) 16px;
+  }
+}
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+  color: var(--color-text);
+}
+
+p {
+  max-width: var(--text-max-width);
+  font-size: 1.1rem;
+  color: var(--color-muted);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+button,
+.btn,
+a.button {
+  background-color: var(--color-accent);
+  color: white;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
+
+button:hover,
+.btn:hover,
+a.button:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.container,
+.wrapper,
+.content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
 }
