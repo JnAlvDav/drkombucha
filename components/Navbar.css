@@ -1,0 +1,144 @@
+/* ========================================
+   NAVBAR STYLES
+   ======================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(255, 249, 240, 0.95);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-scrolled {
+  background-color: rgba(255, 249, 240, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1rem 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.navbar-logo-img {
+  height: 40px;
+  width: auto;
+  border-radius: 0;
+}
+
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #1E1B16;
+  letter-spacing: 0.02em;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  background: none;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #5A4B3F;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #2EA898;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #2EA898;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar-link:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar-cta {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 28px;
+  background-color: #2EA898;
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(46, 168, 152, 0.3);
+  white-space: nowrap;
+}
+
+.navbar-cta:hover {
+  background-color: #257D70;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(46, 168, 152, 0.4);
+  color: white;
+}
+
+/* Mobile styles */
+@media (max-width: 968px) {
+  .navbar-links {
+    display: none;
+  }
+  
+  .navbar-container {
+    gap: 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  
+  .navbar-cta {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo-img {
+    height: 32px;
+  }
+  
+  .navbar-brand {
+    display: none;
+  }
+}

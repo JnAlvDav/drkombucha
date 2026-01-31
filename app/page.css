@@ -107,9 +107,9 @@ img {
   display: inline-block;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 1.125rem;
-  padding: 16px 40px;
-  background-color: var(--color-cta);
+  font-size: 1.6875rem; /* 1.5x larger (from 1.125rem) */
+  padding: 24px 60px; /* 1.5x larger */
+  background: linear-gradient(135deg, #2EA898 0%, #257D70 100%); /* Turquoise vibrant */
   color: white;
   border-radius: var(--radius-button);
   text-decoration: none;
@@ -117,26 +117,26 @@ img {
   border: none;
   cursor: pointer;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(204, 138, 59, 0.3);
+  box-shadow: 0 6px 18px rgba(46, 168, 152, 0.4);
 }
 
 .cta-button:hover,
 .cta-button-hero:hover,
 .cta-button-large:hover,
 .cta-button-final:hover {
-  background-color: var(--color-cta-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(204, 138, 59, 0.4);
+  background: linear-gradient(135deg, #257D70 0%, #1F6A60 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(46, 168, 152, 0.5);
 }
 
 .cta-button-large {
-  font-size: 1.25rem;
-  padding: 20px 48px;
+  font-size: 1.875rem; /* 1.5x from 1.25rem */
+  padding: 30px 72px; /* 1.5x */
 }
 
 .cta-button-final {
-  font-size: 1.5rem;
-  padding: 24px 56px;
+  font-size: 2.25rem; /* 1.5x from 1.5rem */
+  padding: 36px 84px; /* 1.5x */
 }
 
 /* ========================================
@@ -145,17 +145,18 @@ img {
 .page {
   margin: 0;
   padding: 0;
+  padding-top: 70px; /* Space for fixed navbar */
 }
 
 section {
-  padding: var(--section-padding-desktop) 24px;
+  padding: 100px 24px; /* Increased from 120px to 100px for better spacing */
   margin-bottom: var(--section-gap);
 }
 
 @media (max-width: 768px) {
   section {
-    padding: var(--section-padding-mobile) 20px;
-    margin-bottom: 48px;
+    padding: 80px 20px; /* Increased from 64px to 80px */
+    margin-bottom: 60px; /* Increased from 48px to 60px */
   }
 }
 
@@ -169,7 +170,7 @@ section {
    ======================================== */
 .hero {
   background: linear-gradient(135deg, #FFF9F0 0%, #F4E4CF 100%);
-  padding: 80px 24px 100px;
+  padding: 140px 24px 100px; /* Increased top padding for navbar */
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -193,24 +194,24 @@ section {
 }
 
 .hero-wrapper {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
 .hero-logo {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .logo-img {
-  max-width: 180px;
+  max-width: 120px; /* Reduced from 180px */
   height: auto;
   border-radius: 0;
 }
 
 .hero-title {
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2rem, 4vw, 3rem); /* Reduced 25% from clamp(2.5rem, 5vw, 4rem) */
   font-weight: 800;
   letter-spacing: 0.02em;
   margin-bottom: 8px;
@@ -219,7 +220,7 @@ section {
 
 .hero-subtitle {
   font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-size: clamp(1rem, 2vw, 1.4rem); /* Reduced from clamp(1.25rem, 2.5vw, 1.75rem) */
   font-weight: 500;
   color: var(--color-accent);
   margin-bottom: 16px;
@@ -240,7 +241,7 @@ section {
 }
 
 .product-img {
-  max-width: 400px;
+  max-width: 500px; /* Increased from 400px to give more prominence */
   width: 100%;
   height: auto;
   border-radius: var(--radius-lg);
@@ -283,17 +284,31 @@ section {
   margin-bottom: 48px;
 }
 
+/* Responsive grid: 1 column on mobile, 2 on tablet, auto-fit on desktop */
+@media (max-width: 480px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 968px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .benefit-card {
   background: white;
   padding: var(--card-padding);
   border-radius: var(--radius-md);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .benefit-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px) scale(1.05); /* Added scale effect */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
 }
 
 .benefit-card h3 {
@@ -463,11 +478,49 @@ section {
   text-align: center;
   border-radius: var(--radius-lg);
   box-shadow: 0 8px 30px rgba(204, 138, 59, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Offer Badge - "OFERTA LIMITADA" */
+.offer-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #FF6B6B 0%, #EE5A52 100%);
+  color: white;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+  animation: badgePulse 2s ease-in-out infinite;
+  z-index: 10;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 .special-offer h2 {
   color: white;
   margin-bottom: 32px;
+}
+
+.offer-content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .offer-content h3 {
@@ -481,18 +534,21 @@ section {
 }
 
 .regular-price {
-  color: rgba(255, 255, 255, 0.7);
+  color: #FF6B6B; /* Changed to red for visibility */
   text-decoration: line-through;
-  font-size: 1.125rem;
-  margin-bottom: 8px;
+  font-size: 1.75rem; /* Increased from 1.125rem */
+  font-weight: 600; /* Made bolder */
+  margin-bottom: 12px;
+  font-family: var(--font-heading);
 }
 
 .special-price {
   color: white;
-  font-size: 3.5rem;
+  font-size: 4rem; /* Increased from 3.5rem */
   font-weight: 800;
   font-family: var(--font-heading);
   margin-bottom: 16px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .offer-description {
@@ -501,13 +557,13 @@ section {
 }
 
 .special-offer .cta-button-large {
-  background-color: white;
-  color: var(--color-cta);
+  background: linear-gradient(135deg, #2EA898 0%, #257D70 100%);
+  color: white;
 }
 
 .special-offer .cta-button-large:hover {
-  background-color: var(--color-accent-soft);
-  color: var(--color-cta-hover);
+  background: linear-gradient(135deg, #257D70 0%, #1F6A60 100%);
+  transform: translateY(-3px);
 }
 
 /* ========================================
@@ -719,4 +775,60 @@ section {
   margin-top: 40px;
   padding-top: 32px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS FOR CTA BUTTONS
+   ======================================== */
+@media (max-width: 768px) {
+  .cta-button,
+  .cta-button-hero,
+  .cta-button-large,
+  .cta-button-final {
+    font-size: 1.25rem;
+    padding: 18px 40px;
+  }
+  
+  .cta-button-large {
+    font-size: 1.4rem;
+    padding: 20px 48px;
+  }
+  
+  .cta-button-final {
+    font-size: 1.6rem;
+    padding: 22px 50px;
+  }
+  
+  .offer-badge {
+    top: 10px;
+    right: 10px;
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+  
+  .offer-content {
+    padding: 24px;
+  }
+  
+  .regular-price {
+    font-size: 1.25rem;
+  }
+  
+  .special-price {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .product-img {
+    max-width: 100%;
+  }
 }

@@ -1,6 +1,8 @@
 'use client';
 import Image from 'next/image';
 import './page.css';
+import Navbar from '../components/Navbar';
+import FloatingCTA from '../components/FloatingCTA';
 
 export default function Page() {
   const handleWhatsAppClick = (text) => {
@@ -9,7 +11,10 @@ export default function Page() {
   };
 
   return (
-    <main className="page">
+    <>
+      <Navbar />
+      <FloatingCTA />
+      <main className="page">
       {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-wrapper">
@@ -60,7 +65,7 @@ export default function Page() {
       </section>
 
       {/* BENEFITS SECTION WITH 5 CATEGORIES */}
-      <section className="benefits">
+      <section className="benefits" id="beneficios">
         <div className="section-container">
           <div className="benefits-grid">
             <div className="benefit-card">
@@ -122,7 +127,7 @@ export default function Page() {
       </section>
 
       {/* FLAVORS SECTION */}
-      <section className="flavors">
+      <section className="flavors" id="sabores">
         <div className="section-container">
           <h2>Descubre tu sabor favorito</h2>
           <div className="flavors-grid">
@@ -178,6 +183,7 @@ export default function Page() {
       {/* SPECIAL OFFER SECTION */}
       <section className="special-offer">
         <div className="section-container">
+          <div className="offer-badge">⚡ OFERTA LIMITADA</div>
           <h2>Oferta Especial</h2>
           <div className="offer-content">
             <h3>¡PRECIO DE INTRODUCCIÓN!</h3>
@@ -197,7 +203,7 @@ export default function Page() {
       </section>
 
       {/* TESTIMONIALS SECTION */}
-      <section className="testimonials">
+      <section className="testimonials" id="testimonios">
         <div className="section-container">
           <h2>Lo que dicen quienes ya disfrutan Dr Kombucha</h2>
           <p className="testimonials-intro">
@@ -230,7 +236,7 @@ export default function Page() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="faq">
+      <section className="faq" id="faq">
         <div className="section-container">
           <h2>Preguntas Frecuentes</h2>
           <div className="faq-grid">
@@ -275,7 +281,7 @@ export default function Page() {
       </section>
 
       {/* FOOTER */}
-      <footer className="footer">
+      <footer className="footer" id="contacto">
         <div className="footer-content">
           <picture>
             <source srcSet="/images/hero/logotipo-nuevo1.webp" type="image/webp" />
@@ -294,5 +300,6 @@ export default function Page() {
         </div>
       </footer>
     </main>
+    </>
   );
 }
