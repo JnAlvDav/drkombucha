@@ -1,6 +1,8 @@
 'use client';
 import Image from 'next/image';
 import './page.css';
+import Navbar from '../components/Navbar';
+import FloatingCTA from '../components/FloatingCTA';
 
 export default function Page() {
   const handleWhatsAppClick = (text) => {
@@ -9,8 +11,11 @@ export default function Page() {
   };
 
   return (
-    <main className="page">
-      {/* HERO SECTION - REFACTORED FOR SYMMETRY */}
+    <>
+      <Navbar />
+      <FloatingCTA />
+      <main className="page">
+      {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-wrapper-centered">
           <div className="hero-logo-centered">
@@ -57,8 +62,8 @@ export default function Page() {
         </div>
       </section>
 
-      {/* BENEFITS SECTION - 6 CATEGORIES FOR SYMMETRY (3x2) */}
-      <section className="benefits">
+      {/* BENEFITS SECTION WITH 5 CATEGORIES */}
+      <section className="benefits" id="beneficios">
         <div className="section-container">
           <div className="benefits-grid-symmetric">
             <div className="benefit-card">
@@ -117,7 +122,7 @@ export default function Page() {
       </section>
 
       {/* FLAVORS SECTION */}
-      <section className="flavors">
+      <section className="flavors" id="sabores">
         <div className="section-container">
           <h2>Descubre tu sabor favorito</h2>
           <div className="flavors-grid">
@@ -146,8 +151,30 @@ export default function Page() {
         </div>
       </section>
 
-      {/* TESTIMONIALS SECTION - 3 COLUMNS */}
-      <section className="testimonials">
+      {/* SPECIAL OFFER SECTION */}
+      <section className="special-offer">
+        <div className="section-container">
+          <div className="offer-badge">⚡ OFERTA LIMITADA</div>
+          <h2>Oferta Especial</h2>
+          <div className="offer-content">
+            <h3>¡PRECIO DE INTRODUCCIÓN!</h3>
+            <div className="price-info">
+              <p className="regular-price">Precio regular: $300 MXN</p>
+              <p className="special-price">$270 MXN</p>
+              <p className="offer-description">Paquete de 6 botellas (355 ml) - Sabores a elegir</p>
+            </div>
+            <a
+              href="https://wa.me/523221978144?text=Quiero%20el%20paquete%20de%20introducción%20a%20$270%20MXN"
+              className="cta-button-large"
+            >
+              Comprar Ahora
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS SECTION */}
+      <section className="testimonials" id="testimonios">
         <div className="section-container">
           <h2>Lo que dicen nuestros clientes</h2>
           <div className="testimonials-grid-symmetric">
@@ -159,9 +186,39 @@ export default function Page() {
               <p className="testimonial-text">"La frescura y el sabor auténtico artesanal son únicos. Me encanta sentir que cuido mi cuerpo."</p>
               <p className="testimonial-author">– Luis M.</p>
             </div>
-            <div className="testimonial-card">
-              <p className="testimonial-text">"Excelente alternativa saludable. Se nota el rigor científico detrás del producto."</p>
-              <p className="testimonial-author">– Roberto S.</p>
+          </div>
+          <p className="testimonials-cta-text">
+            Únete a la comunidad que elige salud y sabor con Dr Kombucha, y comparte tu experiencia con nosotros.
+          </p>
+          <a
+            href="https://wa.me/523221978144?text=Quiero%20probar%20Dr.%20Kombucha"
+            className="cta-button"
+          >
+            Pedir ahora
+          </a>
+        </div>
+      </section>
+
+      {/* FAQ SECTION */}
+      <section className="faq" id="faq">
+        <div className="section-container">
+          <h2>Preguntas Frecuentes</h2>
+          <div className="faq-grid">
+            <div className="faq-item">
+              <h3>¿Cuántas calorías tiene la kombucha?</h3>
+              <p>La kombucha contiene entre 30-50 calorías por botella, dependiendo del sabor y el contenido de azúcar residual.</p>
+            </div>
+            <div className="faq-item">
+              <h3>¿Cómo puedo hacer un pedido?</h3>
+              <p>Puedes hacer tu pedido directamente por WhatsApp al +52 322 197 8144 o mediante nuestras redes sociales.</p>
+            </div>
+            <div className="faq-item">
+              <h3>¿Cómo debo conservar la kombucha?</h3>
+              <p>Mantén las botellas en refrigeración. La kombucha es mejor consumirla dentro de 3-4 semanas después de recibirla.</p>
+            </div>
+            <div className="faq-item">
+              <h3>¿En qué presentaciones viene?</h3>
+              <p>Ofrecemos botellas individuales de 355ml y paquetes de 6 botellas. También disponemos de presentaciones personalizadas.</p>
             </div>
           </div>
         </div>
@@ -176,14 +233,19 @@ export default function Page() {
           </a>
         </div>
       </section>
-      
-      <footer className="footer">
-        <div className="footer-content-centered">
-          <img src="/images/hero/logotipo-nuevo1.png" alt="Dr. Kombucha" className="footer-logo-centered" />
+
+      {/* FOOTER */}
+      <footer className="footer" id="contacto">
+        <div className="footer-content">
+          <picture>
+            <source srcSet="/images/hero/logotipo-nuevo1.webp" type="image/webp" />
+            <img src="/images/hero/logotipo-nuevo1.png" alt="Dr. Kombucha" className="footer-logo" />
+          </picture>
           <h3>DR. KOMBUCHA</h3>
           <p>© 2025 Dr. Kombucha. Todos los derechos reservados.</p>
         </div>
       </footer>
     </main>
+    </>
   );
 }
