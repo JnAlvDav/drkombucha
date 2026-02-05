@@ -17,37 +17,35 @@ export default function Page() {
       <main className="page">
       {/* HERO SECTION */}
       <section className="hero">
-        <div className="hero-wrapper">
-          <div className="hero-logo">
+        <div className="hero-wrapper-centered">
+          <div className="hero-logo-centered">
             <picture>
               <source srcSet="/images/hero/logotipo-nuevo1.webp" type="image/webp" />
               <img
                 src="/images/hero/logotipo-nuevo1.png"
                 alt="Dr. Kombucha Logo"
-                className="logo-img"
+                className="logo-img-centered"
               />
             </picture>
           </div>
-          <h1 className="hero-title">DR. KOMBUCHA</h1>
-          <p className="hero-subtitle">REMEDIO PROBIÓTICO</p>
-          <p className="hero-tagline">Tu dosis diaria de bienestar. Sabor artesanal del Puerto.</p>
+          <h1 className="hero-title-centered">DR. KOMBUCHA</h1>
+          <p className="hero-subtitle-centered">REMEDIO PROBIÓTICO</p>
+          <p className="hero-tagline-centered">Tu dosis diaria de bienestar. Sabor artesanal del Puerto.</p>
           
-          <div className="hero-product">
+          <div className="hero-product-centered">
             <picture>
               <source srcSet="/images/hero/hero.webp" type="image/webp" />
               <img
                 src="/images/hero/hero.png"
                 alt="Selección Especial Dr. Kombucha"
-                width="400"
-                height="500"
-                className="product-img"
+                className="product-img-centered shadow-3xl"
               />
             </picture>
           </div>
           
           <a
             href="https://wa.me/523221978144?text=¡Hola!%20Estoy%20interesado%20en%20el%20paquete%20de%20introducción%20de%20Dr.%20Kombucha."
-            className="cta-button-hero"
+            className="cta-button-hero-centered"
           >
             Pedir ahora
           </a>
@@ -67,61 +65,58 @@ export default function Page() {
       {/* BENEFITS SECTION WITH 5 CATEGORIES */}
       <section className="benefits" id="beneficios">
         <div className="section-container">
-          <div className="benefits-grid">
+          <div className="benefits-grid-symmetric">
             <div className="benefit-card">
               <h3>🛡️ INMUNIDAD</h3>
-              <p>Ayuda a reforzar tus defensas naturales para un sistema inmunológico más fuerte, gracias a su aporte de probióticos y antioxidantes que mantienen el equilibrio de la microbiota intestinal.</p>
+              <p>Ayuda a reforzar tus defensas naturales para un sistema inmunológico más fuerte, gracias a su aporte de probióticos y antioxidantes.</p>
             </div>
             <div className="benefit-card">
               <h3>🔄 MEJORA DIGESTIÓN</h3>
-              <p>Sus probióticos y enzimas equilibran tu flora intestinal, facilitando la digestión y la absorción de nutrientes de manera natural.</p>
+              <p>Sus probióticos y enzimas equilibran tu flora intestinal, facilitando la digestión y la absorción de nutrientes.</p>
             </div>
             <div className="benefit-card">
               <h3>⚡ ENERGÍA</h3>
-              <p>Contribuye a una mayor vitalidad y bienestar general, aportando vitaminas del complejo B y minerales que ayuden a reducir la fatiga.</p>
+              <p>Contribuye a una mayor vitalidad y bienestar general, aportando vitaminas del complejo B y minerales.</p>
             </div>
             <div className="benefit-card">
-              <h3>🌿 PROTECCIÓN ANTIOXIDANTE</h3>
-              <p>Los ácidos orgánicos y polifenoles presentes en la kombucha protegen tus células del daño oxidativo causado por radicales libres.</p>
+              <h3>🌿 ANTIOXIDANTE</h3>
+              <p>Los ácidos orgánicos y polifenoles presentes protegen tus células del daño oxidativo causado por radicales libres.</p>
             </div>
             <div className="benefit-card">
               <h3>💪 DESINTOXICACIÓN</h3>
-              <p>Ayuda a procesar y eliminar radicales libres, apoyando la función hepática y la eliminación de toxinas del cuerpo.</p>
+              <p>Ayuda a procesar y eliminar radicales libres, apoyando la función hepática y la eliminación de toxinas.</p>
+            </div>
+            <div className="benefit-card">
+              <h3>🧘 BIENESTAR MENTAL</h3>
+              <p>La salud intestinal influye en la claridad mental. Nuestra kombucha apoya el eje intestino-cerebro naturalmente.</p>
             </div>
           </div>
           <div className="benefits-cta">
-            <a
-              href="https://wa.me/523221978144?text=Quiero%20conocer%20más%20sobre%20los%20beneficios%20de%20Dr.%20Kombucha"
-              className="cta-button"
-            >
+            <a href="#" onClick={(e) => { e.preventDefault(); handleWhatsAppClick("Quiero conocer más sobre los beneficios de Dr. Kombucha"); }} className="cta-button">
               Pedir ahora
             </a>
           </div>
         </div>
       </section>
 
-      {/* DOCTOR SECTION - ABOUT */}
-      <section className="doctor-section">
-        <div className="section-container">
-          <div className="doctor-content">
-            <div className="doctor-image">
-              <picture>
-                <source srcSet="/images/hero/scientist.webp" type="image/webp" />
-                <img
-                  src="/images/hero/scientist.png"
-                  alt="Dr. Kombucha - Rigor Científico"
-                  width="500"
-                  height="500"
-                  className="rounded-image"
-                />
-              </picture>
-            </div>
-            <div className="doctor-text">
-              <h2>Dr. Kombucha</h2>
-              <p>
-                Escogió el proceso de fermentación más saludable y los mejores ingredientes locales para obtener una bebida funcional deliciosa, con cero químicos y elaborada artesanalmente.
-              </p>
-            </div>
+      {/* DOCTOR SECTION - REFACTORED TO 50/50 LAYOUT */}
+      <section className="doctor-section-balanced">
+        <div className="section-container balanced-grid">
+          <div className="doctor-image-container">
+            <picture>
+              <source srcSet="/images/hero/scientist.webp" type="image/webp" />
+              <img
+                src="/images/hero/scientist.png"
+                alt="Dr. Kombucha - Rigor Científico"
+                className="balanced-image shadow-xl"
+              />
+            </picture>
+          </div>
+          <div className="doctor-text-balanced">
+            <h2>Dr. Kombucha</h2>
+            <p>
+              Escogió el proceso de fermentación más saludable y los mejores ingredientes locales para obtener una bebida funcional deliciosa, con cero químicos y elaborada artesanalmente.
+            </p>
           </div>
         </div>
       </section>
@@ -153,30 +148,6 @@ export default function Page() {
               <p>Tropical y delicioso</p>
             </div>
           </div>
-          <div className="flavors-cta">
-            <a
-              href="https://wa.me/523221978144?text=¿Cuáles%20son%20los%20sabores%20disponibles?"
-              className="cta-button"
-            >
-              Pedir ahora
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* MISSION SECTION */}
-      <section className="mission">
-        <div className="section-container">
-          <h2>NUESTRA MISIÓN</h2>
-          <p>
-            Es llevar los beneficios de la kombucha a la comunidad de Puerto Vallarta. Inspirados en la tradición y la ciencia, creamos una bebida funcional, deliciosa y 100% artesanal.
-          </p>
-          <a
-            href="https://wa.me/523221978144?text=Quiero%20apoyar%20el%20proyecto%20de%20Dr.%20Kombucha"
-            className="cta-button"
-          >
-            Pedir ahora
-          </a>
         </div>
       </section>
 
@@ -205,21 +176,14 @@ export default function Page() {
       {/* TESTIMONIALS SECTION */}
       <section className="testimonials" id="testimonios">
         <div className="section-container">
-          <h2>Lo que dicen quienes ya disfrutan Dr Kombucha</h2>
-          <p className="testimonials-intro">
-            Nada habla mejor de nuestro producto que la experiencia real de quienes lo han probado. Nuestros clientes destacan cómo Dr Kombucha ha mejorado su bienestar digestivo y les ha aportado energía natural sin aditivos.
-          </p>
-          <div className="testimonials-grid">
+          <h2>Lo que dicen nuestros clientes</h2>
+          <div className="testimonials-grid-symmetric">
             <div className="testimonial-card">
-              <p className="testimonial-text">
-                "Desde que tomé Dr Kombucha, siento que mi digestión ha mejorado notablemente y mi energía dura todo el día."
-              </p>
+              <p className="testimonial-text">"Desde que tomé Dr Kombucha, siento que mi digestión ha mejorado notablemente."</p>
               <p className="testimonial-author">– Ana G.</p>
             </div>
             <div className="testimonial-card">
-              <p className="testimonial-text">
-                "La frescura y el sabor auténtico artesanal son únicos. Me encanta sentir que cuido mi cuerpo con cada sorbo."
-              </p>
+              <p className="testimonial-text">"La frescura y el sabor auténtico artesanal son únicos. Me encanta sentir que cuido mi cuerpo."</p>
               <p className="testimonial-author">– Luis M.</p>
             </div>
           </div>
@@ -257,24 +221,14 @@ export default function Page() {
               <p>Ofrecemos botellas individuales de 355ml y paquetes de 6 botellas. También disponemos de presentaciones personalizadas.</p>
             </div>
           </div>
-          <a
-            href="https://wa.me/523221978144?text=Tengo%20más%20preguntas%20sobre%20Dr.%20Kombucha"
-            className="cta-button"
-          >
-            Pedir ahora
-          </a>
         </div>
       </section>
 
-      {/* FINAL CTA SECTION */}
+      {/* FINAL CTA & FOOTER */}
       <section className="final-cta">
         <div className="section-container">
           <h2>¿Listo para tu remedio probiótico?</h2>
-          <p>Haz tu pedido directamente por WhatsApp. ¡Es rápido y fácil!</p>
-          <a
-            href="https://wa.me/523221978144?text=¡Hola!%20Estoy%20interesado%20en%20el%20paquete%20de%20introducción%20de%20Dr.%20Kombucha."
-            className="cta-button-final"
-          >
+          <a href="#" onClick={(e) => { e.preventDefault(); handleWhatsAppClick("¡Hola! Estoy interesado en el paquete de introducción de Dr. Kombucha."); }} className="cta-button-final">
             ¡CLICK PARA CHATEAR!
           </a>
         </div>
@@ -288,15 +242,7 @@ export default function Page() {
             <img src="/images/hero/logotipo-nuevo1.png" alt="Dr. Kombucha" className="footer-logo" />
           </picture>
           <h3>DR. KOMBUCHA</h3>
-          <p className="footer-tagline">Remedio Probiótico Artesanal</p>
-          
-          <div className="footer-contact">
-            <a href="tel:+523221978144" className="contact-link">📞 Teléfono: 322 197 8144</a>
-            <a href="mailto:contacto@drkombucha.net" className="contact-link">📧 Email: contacto@drkombucha.net</a>
-            <a href="https://wa.me/523221978144" className="contact-link">💬 WhatsApp: 322 197 8144</a>
-          </div>
-          
-          <p className="copyright">© 2025 Dr. Kombucha. Todos los derechos reservados.</p>
+          <p>© 2025 Dr. Kombucha. Todos los derechos reservados.</p>
         </div>
       </footer>
     </main>

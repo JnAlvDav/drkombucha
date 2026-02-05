@@ -86,8 +86,15 @@ a {
   transition: color 0.3s ease;
 }
 
-a:hover {
-  color: var(--color-accent-hover);
+.benefit-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+.benefits-cta {
+  text-align: center;
+  margin-top: 3rem;
 }
 
 /* Images */
