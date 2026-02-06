@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Google Fonts: Cooper-style + Lora */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
 /* Ajustes base de la landing */
 html,
 body {
@@ -11,4 +14,16 @@ body {
 body {
   margin: 0;
   font-family: theme("fontFamily.briklace");
+}
+
+/* Tipografía elegante para headings */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
 }
