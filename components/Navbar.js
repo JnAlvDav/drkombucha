@@ -1,6 +1,7 @@
 'use client';
+
 import { useState, useEffect } from 'react';
-import './Navbar.css';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -9,74 +10,62 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 80; // navbar height
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
+  const navLinks = [
+    { name: 'Inicio', id: 'home' },
+    { name: 'Beneficios', id: 'beneficios' },
+    { name: 'Productos', id: 'productos' },
+    { name: 'FAQ', id: 'faq' },
+    { name: 'Contacto', id: 'contacto' }
+  ];
 
   return (
-    <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
-      <div className="navbar-container">
-        <div className="navbar-logo">
-          <picture>
-            <source srcSet="/images/hero/logotipo-nuevo1.webp" type="image/webp" />
-            <img
-              src="/images/hero/logotipo-nuevo1.png"
-              alt="Dr. Kombucha"
-              className="navbar-logo-img"
-            />
-          </picture>
-          <span className="navbar-brand">DR. KOMBUCHA</span>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${
+      isScrolled 
+        ? 'bg-brand-bg/95 backdrop-blur-md py-4 shadow-lg border-b border-brand-accent/10' 
+        : 'bg-transparent py-6'
+    }`}>
+      <div className="container mx-auto px-6 flex justify-between items-center">
+        <div className="flex items-center gap-3">
+          <Image 
+            src="/images/hero/logotipo-nuevo1.png" 
+            alt="Logo" 
+            width={40} 
+            height={40} 
+            className={`transition-all duration-500 ${isScrolled ? 'scale-90' : 'scale-110'}`}
+          />
+          <span className={`text-xl font-bold tracking-tighter transition-colors duration-500 ${
+            isScrolled ? 'text-brand-primary' : 'text-brand-primary'
+          }`}>
+            DR. KOMBUCHA
+          </span>
         </div>
-        
-        <ul className="navbar-links">
-          <li>
-            <button onClick={() => scrollToSection('beneficios')} className="navbar-link">
-              Beneficios
-            </button>
-          </li>
-          <li>
-            <button onClick={() => scrollToSection('sabores')} className="navbar-link">
-              Sabores
-            </button>
-          </li>
-          <li>
-            <button onClick={() => scrollToSection('testimonios')} className="navbar-link">
-              Testimonios
-            </button>
-          </li>
-          <li>
-            <button onClick={() => scrollToSection('faq')} className="navbar-link">
-              FAQ
-            </button>
-          </li>
-          <li>
-            <button onClick={() => scrollToSection('contacto')} className="navbar-link">
-              Contacto
-            </button>
-          </li>
-        </ul>
-        
-        <a
-          href="https://wa.me/523221978144?text=¡Hola!%20Estoy%20interesado%20en%20el%20paquete%20de%20introducción%20de%20Dr.%20Kombucha."
-          className="navbar-cta"
-        >
-          Pedir Ahora
-        </a>
+Update Navbar to match new classy style and brand colors
+        <div className="hidden md:flex gap-8 items-center">
+          {navLinks.map((link) => (
+            <a 
+              key={link.id}
+              href={`#${link.id}`}
+              className="text-brand-text font-medium hover:text-brand-accent transition-colors relative group"
+            >
+              {link.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-accent transition-all group-hover:w-full"></span>
+            </a>
+          ))}
+          <button className="bg-brand-primary text-brand-bg px-6 py-2 rounded-full font-bold hover:bg-brand-accent transition-all transform hover:scale-105 active:scale-95">
+            Pedir Ahora
+          </button>
+        </div>
+
+        {/* Mobile Menu Icon Placeholder */}
+        <div className="md:hidden text-brand-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </div>
       </div>
     </nav>
   );
