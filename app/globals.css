@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Google Fonts: Cooper-style + Lora */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+/* Importación de Fraunces (La alternativa gratuita a Windsor) y Young Serif */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Young+Serif&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
 
 /* Ajustes base de la landing */
 html,
@@ -13,14 +13,21 @@ body {
 
 body {
   margin: 0;
-  font-family: theme("fontFamily.briklace");
+  font-family: 'Lora', serif;
 }
 
-/* Tipografía elegante para headings */
+/* Tipografía Retro Costeña (Estilo Windsor/Fraunces) */
 h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-family: 'Fraunces', serif;
+  font-weight: 800; /* Windsor es pesada */
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+/* Efecto "Wonk" de Fraunces para imitar las excentricidades de Windsor */
+.font-windsor-style {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "WONK" 1, "SOFT" 100;
 }
 
 /* Smooth scroll */
