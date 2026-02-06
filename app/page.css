@@ -1,44 +1,36 @@
 /* ========================================
-   CSS VARIABLES - Design System
+   CSS VARIABLES - Design System (REMASTERED)
    ======================================== */
 :root {
-  /* Colors */
-  --color-bg: #FFF9F0;
-  --color-text: #1E1B16;
-  --color-muted: #5A4B3F;
-  --color-accent: #2EA898;
-  --color-accent-hover: #257D70;
-  --color-cta: #CC8A3B;
-  --color-cta-hover: #A56621;
-  --color-accent-soft: #F4E4CF;
-
-  /* Spacing */
-  --max-width: 1180px;
-  --text-max-width: 720px;
-  --section-padding-desktop: 120px;
-  --section-padding-mobile: 64px;
-  --section-gap: 80px;
-  --card-padding: 32px;
-
-  /* Border Radius */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-button: 12px;
+  /* Colors - Pure, Classy, Retro Costeña */
+  --color-bg: #FCF8F2; /* Creamy off-white, no more brown */
+  --color-text: #2D2926; /* Deep charcoal */
+  --color-muted: #5C5854;
+  --color-accent: #3D6B5E; /* Forest Kombucha Green */
+  --color-accent-hover: #2D4F46;
+  --color-cta: #D48C45; /* Golden Sand */
+  --color-cta-hover: #B57436;
+  --color-accent-soft: #E9F1EF;
+  
+  /* Spacing - Giving it "AIR" */
+  --max-width: 1200px;
+  --text-max-width: 800px;
+  --section-padding-desktop: 140px;
+  --section-padding-mobile: 80px;
+  --section-gap: 100px;
+  --card-padding: 40px;
 
   /* Typography */
-  --font-heading: 'Poppins', sans-serif;
+  --font-heading: 'Playfair Display', 'Lora', serif;
   --font-body: 'Lora', serif;
-  --line-height-heading: 1.2;
+  --line-height-heading: 1.1;
   --line-height-body: 1.8;
 }
 
 /* ========================================
    BASE STYLES
    ======================================== */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   font-family: var(--font-body);
@@ -47,795 +39,142 @@ body {
   line-height: var(--line-height-body);
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
   font-family: var(--font-heading);
   color: var(--color-text);
   line-height: var(--line-height-heading);
   font-weight: 700;
-  margin: 0 0 1rem 0;
-}
-
-h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 1.5rem 0;
   letter-spacing: -0.01em;
 }
 
-h3 {
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-  font-weight: 600;
-}
+h1 { font-size: clamp(3rem, 6vw, 5rem); }
+h2 { font-size: clamp(2.5rem, 5vw, 3.5rem); text-align: center; margin-bottom: 4rem; }
+h3 { font-size: 1.75rem; color: var(--color-accent); }
 
 p {
-  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-size: 1.125rem;
   color: var(--color-muted);
-  margin: 0 0 1rem 0;
-}
-
-/* Links */
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.benefit-card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--color-muted);
-}
-
-.benefits-cta {
-  text-align: center;
-  margin-top: 3rem;
-}
-
-/* Images */
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
 }
 
 /* ========================================
-   BUTTONS & CTA STYLES
-   ======================================== */
-.cta-button,
-.cta-button-hero,
-.cta-button-large,
-.cta-button-final {
-  display: inline-block;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 1.6875rem; /* 1.5x larger (from 1.125rem) */
-  padding: 24px 60px; /* 1.5x larger */
-  background: linear-gradient(135deg, #2EA898 0%, #257D70 100%); /* Turquoise vibrant */
-  color: white;
-  border-radius: var(--radius-button);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  box-shadow: 0 6px 18px rgba(46, 168, 152, 0.4);
-}
-
-.cta-button:hover,
-.cta-button-hero:hover,
-.cta-button-large:hover,
-.cta-button-final:hover {
-  background: linear-gradient(135deg, #257D70 0%, #1F6A60 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(46, 168, 152, 0.5);
-}
-
-.cta-button-large {
-  font-size: 1.875rem; /* 1.5x from 1.25rem */
-  padding: 30px 72px; /* 1.5x */
-}
-
-.cta-button-final {
-  font-size: 2.25rem; /* 1.5x from 1.5rem */
-  padding: 36px 84px; /* 1.5x */
-}
-
-/* ========================================
-   SECTION CONTAINERS
-   ======================================== */
-.page {
-  margin: 0;
-  padding: 0;
-  padding-top: 70px; /* Space for fixed navbar */
-}
-
-section {
-  padding: 100px 24px; /* Increased from 120px to 100px for better spacing */
-  margin-bottom: var(--section-gap);
-}
-
-@media (max-width: 768px) {
-  section {
-    padding: 80px 20px; /* Increased from 64px to 80px */
-    margin-bottom: 60px; /* Increased from 48px to 60px */
-  }
-}
-
-.section-container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-/* ========================================
-   HERO SECTION
+   HERO SECTION - BOKEH EFFECT
    ======================================== */
 .hero {
-  background: linear-gradient(135deg, #FFF9F0 0%, #F4E4CF 100%);
-  padding: 140px 24px 100px; /* Increased top padding for navbar */
-  text-align: center;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--section-padding-desktop) 24px;
   position: relative;
-  overflow: hidden;
+  background-color: var(--color-bg);
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(212, 140, 69, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(61, 107, 94, 0.05) 0%, transparent 40%);
 }
 
+/* Simulated Bokeh Bubbles */
 .hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(46, 168, 152, 0.05) 0%, rgba(226, 194, 120, 0.08) 100%);
-  animation: gradientShift 8s ease infinite;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.4) 0%, transparent 10%),
+    radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 15%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 20%),
+    radial-gradient(circle at 30% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 12%);
+  filter: blur(40px);
   pointer-events: none;
 }
 
-@keyframes gradientShift {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.6; }
-}
-
 .hero-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-logo {
-  margin-bottom: 20px;
-}
-
-.logo-img {
-  max-width: 120px; /* Reduced from 180px */
-  height: auto;
-  border-radius: 0;
+  max-width: var(--max-width);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-title {
-  font-size: clamp(2rem, 4vw, 3rem); /* Reduced 25% from clamp(2.5rem, 5vw, 4rem) */
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  margin-bottom: 8px;
-  color: var(--color-text);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .hero-subtitle {
   font-family: var(--font-heading);
-  font-size: clamp(1rem, 2vw, 1.4rem); /* Reduced from clamp(1.25rem, 2.5vw, 1.75rem) */
-  font-weight: 500;
+  font-style: italic;
+  font-size: 1.5rem;
   color: var(--color-accent);
-  margin-bottom: 16px;
-  letter-spacing: 0.05em;
-}
-
-.hero-tagline {
-  font-size: clamp(1.125rem, 2vw, 1.375rem);
-  color: var(--color-muted);
-  margin-bottom: 40px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-product {
-  margin: 48px 0;
+  margin-bottom: 2rem;
 }
 
 .product-img {
-  max-width: 500px; /* Increased from 400px to give more prominence */
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.1));
+  margin: 3rem 0;
 }
 
 /* ========================================
-   KOMBUCHA INFO SECTION
+   CLEAN SECTIONS
    ======================================== */
-.kombucha-info {
-  background: white;
-  text-align: center;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.kombucha-info h2 {
-  color: var(--color-accent);
-  margin-bottom: 24px;
-}
-
-.info-text {
-  max-width: var(--text-max-width);
+section {
+  padding: var(--section-padding-desktop) 24px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  font-size: 1.25rem;
 }
 
-/* ========================================
-   BENEFITS SECTION
-   ======================================== */
-.benefits {
-  background: linear-gradient(135deg, #ffffff 0%, #F4E4CF 100%);
-  border-radius: var(--radius-lg);
+.benefits, .flavors, .faq, .testimonials {
+  background: transparent !important; /* Remove those ugly gradients */
+  box-shadow: none !important;
 }
 
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
-  margin-bottom: 48px;
-}
-
-/* Responsive grid: 1 column on mobile, 2 on tablet, auto-fit on desktop */
-@media (max-width: 480px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 968px) {
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.benefit-card {
-  background: white;
-  padding: var(--card-padding);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.benefit-card:hover {
-  transform: translateY(-4px) scale(1.05); /* Added scale effect */
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
-}
-
-.benefit-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 16px;
-  color: var(--color-accent);
-}
-
-.benefit-card p {
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-.benefits-cta {
-  text-align: center;
-  margin-top: 48px;
-}
-
-/* ========================================
-   DOCTOR SECTION
-   ======================================== */
-.doctor-section {
-  background: white;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.doctor-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
-}
-
-@media (max-width: 968px) {
-  .doctor-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-.doctor-image img {
-  border-radius: var(--radius-lg);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-}
-
-.doctor-text h2 {
-  color: var(--color-accent);
-  margin-bottom: 24px;
-}
-
-.doctor-text p {
-  font-size: 1.125rem;
-  line-height: 1.8;
-}
-
-/* ========================================
-   FLAVORS SECTION
-   ======================================== */
-.flavors {
-  background: linear-gradient(135deg, #FFF9F0 0%, #ffffff 100%);
-  text-align: center;
-  border-radius: var(--radius-lg);
-}
-
-.flavors h2 {
-  color: var(--color-accent);
-  margin-bottom: 56px;
-}
-
-.flavors-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  margin-bottom: 48px;
-}
-
-@media (max-width: 768px) {
-  .flavors-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-}
-
-.flavor-card {
-  background: white;
-  padding: 32px;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.flavor-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-}
-
-.flavor-image {
-  margin-bottom: 24px;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-}
-
-.flavor-image img {
-  transition: transform 0.4s ease;
-}
-
-.flavor-card:hover .flavor-image img {
-  transform: scale(1.05);
-}
-
-.flavor-card h3 {
-  font-size: 1.5rem;
-  color: var(--color-text);
-  margin-bottom: 12px;
-}
-
-.flavor-card p {
-  color: var(--color-muted);
-  font-size: 1.125rem;
-}
-
-.flavors-cta {
-  text-align: center;
-  margin-top: 48px;
-}
-
-/* ========================================
-   MISSION SECTION
-   ======================================== */
-.mission {
-  background: linear-gradient(135deg, #2EA898 0%, #257D70 100%);
-  color: white;
-  text-align: center;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 8px 30px rgba(46, 168, 152, 0.3);
-}
-
-.mission h2 {
-  color: white;
-  margin-bottom: 32px;
-}
-
-.mission p {
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1.25rem;
-  max-width: var(--text-max-width);
-  margin: 0 auto 48px;
-}
-
-.mission .cta-button {
-  background-color: white;
-  color: var(--color-accent);
-}
-
-.mission .cta-button:hover {
-  background-color: var(--color-accent-soft);
-  color: var(--color-accent-hover);
-}
-
-/* ========================================
-   SPECIAL OFFER SECTION
-   ======================================== */
-.special-offer {
-  background: linear-gradient(135deg, #CC8A3B 0%, #A56621 100%);
-  color: white;
-  text-align: center;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 8px 30px rgba(204, 138, 59, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Offer Badge - "OFERTA LIMITADA" */
-.offer-badge {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #FF6B6B 0%, #EE5A52 100%);
-  color: white;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.875rem;
-  padding: 8px 16px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
-  animation: badgePulse 2s ease-in-out infinite;
-  z-index: 10;
-}
-
-@keyframes badgePulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-.special-offer h2 {
-  color: white;
-  margin-bottom: 32px;
-}
-
-.offer-content {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 40px;
-  border-radius: var(--radius-lg);
-  backdrop-filter: blur(10px);
-  max-width: 700px;
-  margin: 0 auto;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-.offer-content h3 {
-  color: white;
-  font-size: 2rem;
-  margin-bottom: 24px;
-}
-
-.price-info {
-  margin: 32px 0 40px;
-}
-
-.regular-price {
-  color: #FF6B6B; /* Changed to red for visibility */
-  text-decoration: line-through;
-  font-size: 1.75rem; /* Increased from 1.125rem */
-  font-weight: 600; /* Made bolder */
-  margin-bottom: 12px;
-  font-family: var(--font-heading);
-}
-
-.special-price {
-  color: white;
-  font-size: 4rem; /* Increased from 3.5rem */
-  font-weight: 800;
-  font-family: var(--font-heading);
-  margin-bottom: 16px;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.offer-description {
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1.25rem;
-}
-
-.special-offer .cta-button-large {
-  background: linear-gradient(135deg, #2EA898 0%, #257D70 100%);
-  color: white;
-}
-
-.special-offer .cta-button-large:hover {
-  background: linear-gradient(135deg, #257D70 0%, #1F6A60 100%);
-  transform: translateY(-3px);
-}
-
-/* ========================================
-   TESTIMONIALS SECTION
-   ======================================== */
-.testimonials {
-  background: white;
-  text-align: center;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.testimonials h2 {
-  color: var(--color-accent);
-  margin-bottom: 32px;
-}
-
-.testimonials-intro {
-  max-width: var(--text-max-width);
-  margin: 0 auto 56px;
-  font-size: 1.125rem;
-  color: var(--color-muted);
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  margin-bottom: 48px;
-}
-
-@media (max-width: 768px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-}
-
-.testimonial-card {
-  background: linear-gradient(135deg, #F4E4CF 0%, #FFF9F0 100%);
-  padding: var(--card-padding);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.testimonial-text {
-  font-style: italic;
-  font-size: 1.125rem;
-  color: var(--color-text);
-  margin-bottom: 24px;
-  line-height: 1.8;
-}
-
-.testimonial-author {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  color: var(--color-accent);
-  font-size: 1rem;
-}
-
-.testimonials-cta-text {
-  max-width: var(--text-max-width);
-  margin: 0 auto 32px;
-  font-size: 1.125rem;
-}
-
-/* ========================================
-   FAQ SECTION
-   ======================================== */
-.faq {
-  background: linear-gradient(135deg, #ffffff 0%, #F4E4CF 100%);
-  border-radius: var(--radius-lg);
-}
-
-.faq h2 {
-  text-align: center;
-  color: var(--color-accent);
-  margin-bottom: 56px;
-}
-
-.faq-grid {
+.benefits-grid, .flavors-grid, .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 32px;
-  margin-bottom: 48px;
+  gap: 4rem;
 }
 
-.faq-item {
+.benefit-card, .flavor-card, .testimonial-card, .faq-item {
   background: white;
   padding: var(--card-padding);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 2px; /* Sharper, classier retro look */
+  border: 1px solid #E9E4DE;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover, .flavor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+/* Typography fix for cards */
+.benefit-card h3 { margin-bottom: 1rem; text-align: center; border-bottom: 1px solid var(--color-accent-soft); padding-bottom: 1rem; }
+.benefit-card p { font-size: 1rem; text-align: center; }
+
+/* Buttons */
+.cta-button, .cta-button-hero {
+  background: var(--color-accent);
+  color: white;
+  padding: 1.25rem 3rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 0; /* Retro elegant */
   transition: all 0.3s ease;
 }
 
-.faq-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+.cta-button:hover {
+  background: var(--color-accent-hover);
+  letter-spacing: 0.15em;
 }
 
-.faq-item h3 {
-  color: var(--color-accent);
-  margin-bottom: 16px;
-  font-size: 1.125rem;
-}
-
-.faq-item p {
-  color: var(--color-muted);
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-.faq .cta-button {
-  display: block;
-  margin: 48px auto 0;
-  max-width: 300px;
-}
-
-/* ========================================
-   FINAL CTA SECTION
-   ======================================== */
-.final-cta {
-  background: linear-gradient(135deg, #CC8A3B 0%, #A56621 100%);
-  color: white;
-  text-align: center;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 8px 30px rgba(204, 138, 59, 0.3);
-}
-
-.final-cta h2 {
-  color: white;
-  margin-bottom: 24px;
-}
-
-.final-cta p {
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1.25rem;
-  margin-bottom: 40px;
-}
-
-.final-cta .cta-button-final {
-  background-color: white;
-  color: var(--color-cta);
-}
-
-.final-cta .cta-button-final:hover {
-  background-color: var(--color-accent-soft);
-  color: var(--color-cta-hover);
-}
-
-/* ========================================
-   FOOTER
-   ======================================== */
-.footer {
-  background: var(--color-text);
-  color: white;
-  padding: 80px 24px 40px;
-  text-align: center;
-}
-
-.footer-content {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.footer-logo {
-  max-width: 120px;
-  margin-bottom: 24px;
-  border-radius: 0;
-}
-
-.footer h3 {
-  color: white;
-  margin-bottom: 8px;
-}
-
-.footer-tagline {
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 40px;
-  font-size: 1.125rem;
-}
-
-.footer-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 40px;
-}
-
-.contact-link {
-  color: var(--color-accent-soft);
-  font-size: 1.125rem;
-  transition: color 0.3s ease;
-}
-
-.contact-link:hover {
-  color: var(--color-accent);
-}
-
-.copyright {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.875rem;
-  margin-top: 40px;
-  padding-top: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* ========================================
-   RESPONSIVE ADJUSTMENTS FOR CTA BUTTONS
-   ======================================== */
-@media (max-width: 768px) {
-  .cta-button,
-  .cta-button-hero,
-  .cta-button-large,
-  .cta-button-final {
-    font-size: 1.25rem;
-    padding: 18px 40px;
-  }
-  
-  .cta-button-large {
-    font-size: 1.4rem;
-    padding: 20px 48px;
-  }
-  
-  .cta-button-final {
-    font-size: 1.6rem;
-    padding: 22px 50px;
-  }
-  
-  .offer-badge {
-    top: 10px;
-    right: 10px;
-    font-size: 0.75rem;
-    padding: 6px 12px;
-  }
-  
-  .offer-content {
-    padding: 24px;
-  }
-  
-  .regular-price {
-    font-size: 1.25rem;
-  }
-  
-  .special-price {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 1.75rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 0.95rem;
-  }
-  
-  .product-img {
-    max-width: 100%;
-  }
+/* Hide Popup / Floating CTA - User hates it */
+.floating-cta {
+  display: none !important;
 }
