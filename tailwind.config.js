@@ -8,15 +8,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "brand-primary": "#2F5847",
-        "brand-bg": "#FCF8F2",
-        "brand-bg-soft": "#F5F1EB",
-        "brand-text": "#1F1F1F",
-        "brand-text-muted": "#6B6B6B",
-        "brand-cta": "#C9985B",
-        "brand-cta-hover": "#A67C48",
-        "brand-accent": "#5A8B76",
-        "brand-dark": "#1E3A2F",
+        "brand-primary": "#2D5A27", // Rich Forest Green
+        "brand-bg": "#FAF9F6",      // Bone White (Clean & Classy)
+        "brand-bg-soft": "#F0EDE7", // Soft Sand
+        "brand-text": "#1A202C",    // Deep Charcoal
+        "brand-text-muted": "#718096",
+        "brand-cta": "#4682B4",     // Steel Blue (Coastal)
+        "brand-cta-hover": "#36648B",
+        "brand-accent": "#A3B18A",  // Sage Green
+        "brand-dark": "#132A13",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
