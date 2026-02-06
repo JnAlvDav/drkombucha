@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Importación de Fraunces (La alternativa gratuita a Windsor) y Young Serif */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Young+Serif&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+/* Estilo Perplexity: Instrument Serif (Títulos) + Inter (Cuerpo) */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* Ajustes base de la landing */
 html,
@@ -13,21 +13,33 @@ body {
 
 body {
   margin: 0;
-  font-family: 'Lora', serif;
+  font-family: 'Inter', sans-serif; /* Texto limpio estilo Perplexity */
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Tipografía Retro Costeña (Estilo Windsor/Fraunces) */
+/* Tipografía Elegante Perplexity (Instrument Serif) */
 h1, h2, h3 {
-  font-family: 'Fraunces', serif;
-  font-weight: 800; /* Windsor es pesada */
-  letter-spacing: -0.03em;
-  line-height: 1;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
 }
 
-/* Efecto "Wonk" de Fraunces para imitar las excentricidades de Windsor */
-.font-windsor-style {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "WONK" 1, "SOFT" 100;
+/* Títulos más grandes y finos */
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+/* Párrafos limpios y modernos */
+p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  opacity: 0.8;
+  line-height: 1.6;
 }
 
 /* Smooth scroll */
