@@ -17,8 +17,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Inicio', id: 'home' },
     { name: 'Beneficios', id: 'beneficios' },
-    { name: 'Productos', id: 'productos' },
-    { name: 'FAQ', id: 'faq' },
+    { name: 'Sabores', id: 'sabores' },
     { name: 'Contacto', id: 'contacto' }
   ];
 
@@ -37,30 +36,27 @@ export default function Navbar() {
             height={40} 
             className={`transition-all duration-500 ${isScrolled ? 'scale-90' : 'scale-110'}`}
           />
-          <span className={`text-xl font-bold tracking-tighter transition-colors duration-500 ${
-            isScrolled ? 'text-brand-primary' : 'text-brand-primary'
-          }`}>
+          <span className="text-xl font-bold tracking-tighter text-brand-primary">
             DR. KOMBUCHA
           </span>
         </div>
-Update Navbar to match new classy style and brand colors
-        <div className="hidden md:flex gap-8 items-center">
+
+        <div className="hidden md:flex gap-8 items-center text-sm uppercase tracking-widest font-bold">
           {navLinks.map((link) => (
             <a 
               key={link.id}
               href={`#${link.id}`}
-              className="text-brand-text font-medium hover:text-brand-accent transition-colors relative group"
+              className="text-brand-text hover:text-brand-accent transition-colors relative group"
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-accent transition-all group-hover:w-full"></span>
             </a>
           ))}
-          <button className="bg-brand-primary text-brand-bg px-6 py-2 rounded-full font-bold hover:bg-brand-accent transition-all transform hover:scale-105 active:scale-95">
+          <button className="bg-brand-primary text-brand-bg px-6 py-2 rounded-full font-bold hover:bg-brand-accent transition-all transform hover:scale-105 active:scale-95 shadow-md">
             Pedir Ahora
           </button>
         </div>
 
-        {/* Mobile Menu Icon Placeholder */}
         <div className="md:hidden text-brand-primary">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
