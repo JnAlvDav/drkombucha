@@ -19,15 +19,15 @@ module.exports = {
         "brand-dark": "#1E3A2F",
       },
       fontFamily: {
-        serif: ["Fraunces", "serif"],
-        fraunces: ["Fraunces", "serif"],
-        youngserif: ["Young Serif", "serif"],
-        lora: ["Lora", "serif"],
-        youngsans: ["Young Sans", "serif"],
-        lemons: ["Lemons Sans", "sans-serif"],
-        briklace: ["Briklace Grotesque", "system-ui", "sans-serif"]
-      }
+        sans: ["Inter", "sans-serif"],
+        serif: ["Instrument Serif", "serif"],
+        display: ["Instrument Serif", "serif"],
+      },
+      letterSpacing: {
+        tighter: "-0.05em",
+        widest: "0.25em",
+      },
     },
   },
   plugins: [],
-}
+};
