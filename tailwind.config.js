@@ -8,14 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "brand-primary": "#2EA898",
-        "brand-bg": "#FFF9F0",
-        "brand-bg-soft": "#F4E4CF",
-        "brand-text": "#1E1B16",
-        "brand-text-muted": "#5A4B3F",
-        "brand-cta": "#CC8A3B",
-        "brand-cta-hover": "#A56621",
-        "brand-accent": "#E2C278",
+        // Nueva paleta inspirada en las referencias (verde bosque + dorado + crema)
+        "brand-primary": "#2F5847",      // Verde bosque oscuro (principal)
+        "brand-bg": "#FAF7F2",           // Crema ultra claro (fondo general)
+        "brand-bg-soft": "#F5F1EB",      // Beige suave (fondos alternados)
+        "brand-text": "#1F1F1F",         // Negro carbón (texto principal)
+        "brand-text-muted": "#6B6B6B",   // Gris oscuro (texto secundario)
+        "brand-cta": "#C9985B",          // Dorado arena (botones y acentos)
+        "brand-cta-hover": "#A67C48",    // Dorado más oscuro (hover)
+        "brand-accent": "#5A8B76",       // Verde medio (acentos suaves)
+        "brand-dark": "#1E3A2F",         // Verde muy oscuro (fondos hero/footer)
       },
       fontFamily: {
         youngsans: ["Young Sans", "serif"],
