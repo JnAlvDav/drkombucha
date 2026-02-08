@@ -2,6 +2,9 @@
 
 Sitio web oficial de Dr. Kombucha - Kombucha artesanal en Puerto Vallarta, Jalisco.
 
+
+## Última actualización: Febrero 8, 2026
+Contenido actualizado para cumplir con regulaciones de alimentos y bebidas.
 ## 🚀 Desarrollo
 
 ```bash
