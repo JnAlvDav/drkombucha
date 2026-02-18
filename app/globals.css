@@ -5,6 +5,28 @@
 /* Estilo Perplexity: Instrument Serif (Títulos) + Inter (Cuerpo) */
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* Import custom page styles after Tailwind */
+@import './page.css';
+
+@layer utilities {
+  /* Force two-column layout for hero */
+  .hero-wrapper-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 4rem !important;
+    align-items: center !important;
+    max-width: 1180px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  
+  @media (max-width: 900px) {
+    .hero-wrapper-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+}
+
 /* Ajustes base de la landing */
 html,
 body {

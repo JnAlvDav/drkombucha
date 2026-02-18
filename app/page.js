@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Navbar from '../components/Navbar';
 
 export default function Page() {
@@ -13,32 +14,50 @@ export default function Page() {
       <Navbar />
       <main className="min-h-screen bg-brand-bg text-brand-text font-sans">
         
-        {/* HERO SECTION */}
-        <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden">
-          <div className="container mx-auto text-center relative z-10">
-            <h1 className="text-7xl md:text-[10rem] font-serif font-bold mb-6 tracking-tighter text-brand-primary leading-none">
-              Dr. Kombucha
-            </h1>
-            <p className="text-2xl md:text-3xl mb-8 font-light text-brand-primary tracking-wide">
-              Kombucha artesanal de Puerto Vallarta
-            </p>
-            <div className="max-w-3xl mx-auto mb-12">
-              <p className="text-lg md:text-xl text-brand-text-muted leading-relaxed mb-4">
-                Bebida fermentada elaborada con té, azúcar y fermentación cuidada.
-              </p>
-              <p className="text-lg md:text-xl text-brand-text-muted leading-relaxed">
-                Sabor honesto, proceso artesanal y producción local.
-              </p>
+        {/* HERO SECTION - TWO COLUMN LAYOUT */}
+        <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden bg-brand-bg">
+          <div className="container mx-auto max-w-[1180px] relative z-10">
+            {/* Two-column grid: Text left, Image right */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* Left Column: Text Content */}
+              <div className="text-left">
+                <h1 className="text-5xl md:text-7xl font-serif font-black mb-6 tracking-tighter text-brand-text leading-none">
+                  Dr. Kombucha
+                </h1>
+                <p className="text-2xl md:text-3xl mb-8 font-bold text-brand-accent tracking-wide">
+                  Kombucha artesanal de Puerto Vallarta
+                </p>
+                <div className="mb-12">
+                  <p className="text-lg md:text-xl text-brand-text-muted leading-relaxed mb-4">
+                    Bebida fermentada elaborada con té, azúcar y fermentación cuidada.
+                  </p>
+                  <p className="text-lg md:text-xl text-brand-text-muted leading-relaxed">
+                    Sabor honesto, proceso artesanal y producción local.
+                  </p>
+                </div>
+                <button 
+                  onClick={() => handleWhatsAppClick("Hola! Me gustaría hacer un pedido de Dr. Kombucha.")}
+                  className="px-12 py-5 bg-brand-accent text-white rounded-full font-bold text-xl hover:bg-brand-accent-hover transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 uppercase tracking-widest"
+                >
+                  Pedir Ahora
+                </button>
+              </div>
+
+              {/* Right Column: Product Image */}
+              <div className="flex justify-center items-center">
+                <div className="relative w-full max-w-md">
+                  <Image
+                    src="/images/hero/natural.webp"
+                    alt="Dr. Kombucha Natural"
+                    width={600}
+                    height={800}
+                    priority
+                    className="w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </div>
             </div>
-            <button 
-              onClick={() => handleWhatsAppClick("Hola! Me gustaría hacer un pedido de Dr. Kombucha.")}
-              className="px-12 py-5 bg-brand-primary text-brand-bg rounded-full font-bold text-xl hover:bg-brand-cta transition-all duration-300 shadow-2xl uppercase tracking-widest"
-            >
-              Pedir Ahora
-            </button>
           </div>
-          
-          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-brand-bg-soft to-transparent opacity-50"></div>
         </section>
 
         {/* ¿QUÉ ES LA KOMBUCHA? SECTION */}
@@ -56,10 +75,11 @@ export default function Page() {
           </div>
         </section>
 
-        {/* CARACTERÍSTICAS SECTION */}
+        {/* CARACTERÍSTICAS SECTION - 3 COLUMN GRID */}
         <section className="py-32 bg-brand-bg-soft">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div className="section-container">
+            <h2>Características</h2>
+            <div className="benefits-grid">
               {[
                 { 
                   title: "FERMENTACIÓN", 
@@ -86,14 +106,14 @@ export default function Page() {
                   desc: "Hecha para disfrutarse." 
                 }
               ].map((item, i) => (
-                <div key={i} className="flex flex-col items-center text-center group">
-                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-10 shadow-sm border border-brand-accent/20 group-hover:scale-110 transition-transform">
+                <div key={i} className="benefit-card">
+                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-10 shadow-sm border border-brand-accent/20 group-hover:scale-110 transition-transform mx-auto">
                     <div className="w-8 h-8 border-2 border-brand-cta rounded-full flex items-center justify-center">
                       <div className="w-2 h-2 bg-brand-primary rounded-full"></div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-serif font-bold mb-6 text-brand-primary tracking-wider">{item.title}</h3>
-                  <p className="text-brand-text-muted leading-relaxed text-base max-w-xs">{item.desc}</p>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -115,14 +135,14 @@ export default function Page() {
           </div>
         </section>
 
-        {/* TESTIMONIOS SECTION */}
+        {/* TESTIMONIOS SECTION - 3 COLUMN GRID */}
         <section className="py-32 bg-brand-bg-soft" id="testimonios">
-          <div className="container mx-auto px-6">
-            <h2 className="text-4xl md:text-6xl font-serif text-center mb-8 text-brand-primary">Lo que dicen quienes ya disfrutan Dr. Kombucha</h2>
+          <div className="section-container">
+            <h2>Lo que dicen quienes ya disfrutan Dr. Kombucha</h2>
             <p className="text-center text-lg text-brand-text-muted mb-20 max-w-3xl mx-auto">
               Nada habla mejor de nuestro producto que la experiencia real de quienes lo han probado. Nuestros clientes destacan el sabor, la frescura y el carácter artesanal de Dr. Kombucha.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div className="testimonials-grid">
               {[
                 {
                   name: "Ana G.",
@@ -131,9 +151,13 @@ export default function Page() {
                 {
                   name: "Luis M.",
                   text: "La kombucha tiene un perfil muy equilibrado, no es agresiva ni empalagosa. Se volvió parte de mi rutina."
+                },
+                {
+                  name: "María R.",
+                  text: "Excelente calidad y sabor auténtico. El proceso artesanal se nota en cada sorbo."
                 }
               ].map((testi, i) => (
-                <div key={i} className="bg-white p-12 rounded-3xl shadow-sm border border-brand-accent/10">
+                <div key={i} className="testimonial-card">
                   <p className="text-xl mb-8 text-brand-text-muted leading-relaxed font-sans">{testi.text}</p>
                   <p className="font-sans font-bold text-brand-primary tracking-widest">— {testi.name}</p>
                 </div>
@@ -176,13 +200,13 @@ export default function Page() {
 
         {/* CTA FINAL SECTION */}
         <section className="py-32 bg-brand-bg-soft text-center">
-           <h2 className="text-4xl md:text-7xl font-serif mb-8 text-brand-primary">¿Listo para probar kombucha artesanal?</h2>
+           <h2>¿Listo para probar kombucha artesanal?</h2>
            <p className="text-xl text-brand-text-muted mb-16 max-w-2xl mx-auto">
              Haz tu pedido directamente por WhatsApp. Es rápido y sencillo.
            </p>
            <button 
               onClick={() => handleWhatsAppClick("Hola! Quiero hacer mi pedido de Dr. Kombucha.")}
-              className="px-16 py-8 bg-brand-cta text-white rounded-full font-bold text-2xl hover:bg-brand-primary transition-all shadow-2xl uppercase tracking-widest"
+              className="cta-button"
             >
               Hacer Pedido
             </button>
