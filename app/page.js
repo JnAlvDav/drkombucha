@@ -1,223 +1,189 @@
 'use client';
-
-import React from 'react';
 import Image from 'next/image';
-import Navbar from '../components/Navbar';
+import './page.css';
 
 export default function Page() {
-  const handleWhatsAppClick = (message) => {
-    window.open(`https://wa.me/523221234567?text=${encodeURIComponent(message)}`, '_blank');
+  const handleWhatsAppClick = (text) => {
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/523221978144?text=${encodedText}`, '_blank');
   };
 
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen bg-brand-bg text-brand-text font-sans">
-        
-        {/* HERO SECTION - TWO COLUMN LAYOUT */}
-        <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden bg-brand-bg">
-          <div className="container mx-auto max-w-[1180px] relative z-10">
-            {/* Two-column grid: Text left, Image right */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Left Column: Text Content */}
-              <div className="text-left">
-                <h1 className="text-5xl md:text-7xl font-serif font-black mb-6 tracking-tighter text-brand-text leading-none">
-                  Dr. Kombucha
-                </h1>
-                <p className="text-2xl md:text-3xl mb-8 font-bold text-brand-accent tracking-wide">
-                  Kombucha artesanal de Puerto Vallarta
-                </p>
-                <div className="mb-12">
-                  <p className="text-lg md:text-xl text-brand-text-muted leading-relaxed mb-4">
-                    Bebida fermentada elaborada con té, azúcar y fermentación cuidada.
-                  </p>
-                  <p className="text-lg md:text-xl text-brand-text-muted leading-relaxed">
-                    Sabor honesto, proceso artesanal y producción local.
-                  </p>
-                </div>
-                <button 
-                  onClick={() => handleWhatsAppClick("Hola! Me gustaría hacer un pedido de Dr. Kombucha.")}
-                  className="px-12 py-5 bg-brand-accent text-white rounded-full font-bold text-xl hover:bg-brand-accent-hover transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 uppercase tracking-widest"
-                >
-                  Pedir Ahora
-                </button>
-              </div>
+    <main className="page">
+      {/* HERO SECTION - CENTERED LAYOUT */}
+      <section className="hero">
+        <div className="hero-wrapper-centered">
+          <div className="hero-logo-centered">
+            <picture>
+              <source srcSet="/images/hero/logotipo-nuevo1.webp" type="image/webp" />
+              <img
+                src="/images/hero/logotipo-nuevo1.png"
+                alt="Dr. Kombucha Logo"
+                className="logo-img-centered"
+              />
+            </picture>
+          </div>
+          <h1 className="hero-title-centered">DR. KOMBUCHA</h1>
+          <p className="hero-subtitle-centered">SABOR ARTESANAL DEL PUERTO</p>
+          <p className="hero-tagline-centered">Tu dosis diaria de bienestar. Sabor artesanal del Puerto.</p>
+          
+          <div className="hero-product-centered">
+            <picture>
+              <source srcSet="/images/hero/hero.webp" type="image/webp" />
+              <img
+                src="/images/hero/hero.png"
+                alt="Selección Especial Dr. Kombucha"
+                className="product-img-centered shadow-3xl"
+              />
+            </picture>
+          </div>
+          
+          <a
+            href="https://wa.me/523221978144?text=¡Hola!%20Estoy%20interesado%20en%20el%20paquete%20de%20introducción%20de%20Dr.%20Kombucha."
+            className="cta-button-hero-centered"
+          >
+            Pedir ahora
+          </a>
+        </div>
+      </section>
 
-              {/* Right Column: Product Image */}
-              <div className="flex justify-center items-center">
-                <div className="relative w-full max-w-md">
-                  <Image
-                    src="/images/hero/natural.webp"
-                    alt="Dr. Kombucha Natural"
-                    width={600}
-                    height={800}
-                    priority
-                    className="w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              </div>
+      {/* WHAT IS KOMBUCHA SECTION */}
+      <section className="kombucha-info">
+        <div className="section-container">
+          <h2>¿Qué es la Kombucha?</h2>
+          <p className="info-text">
+            Es una bebida fermentada de té, con un balance ligero y armónico entre acidez y dulzura, efervescente y cargada de beneficios para la salud.
+          </p>
+        </div>
+      </section>
+
+      {/* BENEFITS SECTION - 6 CATEGORIES FOR SYMMETRY (3x2) */}
+      <section className="benefits">
+        <div className="section-container">
+          <div className="benefits-grid-symmetric">
+            <div className="benefit-card">
+              <h3>🛡️ INMUNIDAD</h3>
+              <p>Ayuda a reforzar tus defensas naturales para un sistema inmunológico más fuerte, gracias a su aporte de probióticos y antioxidantes.</p>
+            </div>
+            <div className="benefit-card">
+              <h3>🔄 MEJORA DIGESTIÓN</h3>
+              <p>Sus probióticos y enzimas equilibran tu flora intestinal, facilitando la digestión y la absorción de nutrientes.</p>
+            </div>
+            <div className="benefit-card">
+              <h3>⚡ ENERGÍA</h3>
+              <p>Contribuye a una mayor vitalidad y bienestar general, aportando vitaminas del complejo B y minerales.</p>
+            </div>
+            <div className="benefit-card">
+              <h3>🌿 ANTIOXIDANTE</h3>
+              <p>Los ácidos orgánicos y polifenoles presentes protegen tus células del daño oxidativo causado por radicales libres.</p>
+            </div>
+            <div className="benefit-card">
+              <h3>💪 DESINTOXICACIÓN</h3>
+              <p>Ayuda a procesar y eliminar radicales libres, apoyando la función hepática y la eliminación de toxinas.</p>
+            </div>
+            <div className="benefit-card">
+              <h3>🧘 BIENESTAR MENTAL</h3>
+              <p>La salud intestinal influye en la claridad mental. Nuestra kombucha apoya el eje intestino-cerebro naturalmente.</p>
             </div>
           </div>
-        </section>
-
-        {/* ¿QUÉ ES LA KOMBUCHA? SECTION */}
-        <section className="py-32 bg-white" id="que-es">
-          <div className="container mx-auto px-6 max-w-4xl">
-            <h2 className="text-4xl md:text-6xl font-serif text-center mb-12 text-brand-primary">¿Qué es la kombucha?</h2>
-            <div className="text-lg md:text-xl text-brand-text-muted leading-relaxed space-y-6">
-              <p>
-                Es una bebida fermentada a base de té y azúcar, transformados mediante un cultivo de levaduras y bacterias. El resultado es una bebida ligeramente ácida, refrescante y con un perfil de sabor equilibrado.
-              </p>
-              <p>
-                La kombucha forma parte de una tradición de fermentación que prioriza el proceso, el tiempo y el cuidado del producto final.
-              </p>
-            </div>
+          <div className="benefits-cta">
+            <a href="#" onClick={(e) => { e.preventDefault(); handleWhatsAppClick("Quiero conocer más sobre los beneficios de Dr. Kombucha"); }} className="cta-button">
+              Pedir ahora
+            </a>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CARACTERÍSTICAS SECTION - 3 COLUMN GRID */}
-        <section className="py-32 bg-brand-bg-soft">
-          <div className="section-container">
-            <h2>Características</h2>
-            <div className="benefits-grid">
-              {[
-                { 
-                  title: "FERMENTACIÓN", 
-                  desc: "Bebida obtenida mediante un proceso natural de fermentación controlada, que define su carácter y sabor." 
-                },
-                { 
-                  title: "SABOR EQUILIBRADO", 
-                  desc: "Perfil ligeramente ácido y refrescante, resultado del equilibrio entre té, azúcar y fermentación." 
-                },
-                { 
-                  title: "INGREDIENTES SIMPLES", 
-                  desc: "Elaborada con té, azúcar, agua y cultivo de fermentación. Sin procesos industriales agresivos." 
-                },
-                { 
-                  title: "ALTERNATIVA A REFRESCOS", 
-                  desc: "Una opción distinta frente a bebidas altamente azucaradas o artificiales." 
-                },
-                { 
-                  title: "PROCESO ARTESANAL", 
-                  desc: "Producción en pequeños lotes, cuidando cada etapa del proceso." 
-                },
-                { 
-                  title: "FERMENTACIÓN ARTESANAL", 
-                  desc: "Hecha para disfrutarse." 
-                }
-              ].map((item, i) => (
-                <div key={i} className="benefit-card">
-                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-10 shadow-sm border border-brand-accent/20 group-hover:scale-110 transition-transform mx-auto">
-                    <div className="w-8 h-8 border-2 border-brand-cta rounded-full flex items-center justify-center">
-                      <div className="w-2 h-2 bg-brand-primary rounded-full"></div>
-                    </div>
-                  </div>
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                </div>
-              ))}
-            </div>
+      {/* DOCTOR SECTION - 50/50 LAYOUT */}
+      <section className="doctor-section-balanced">
+        <div className="section-container balanced-grid">
+          <div className="doctor-image-container">
+            <picture>
+              <source srcSet="/images/hero/scientist.webp" type="image/webp" />
+              <img
+                src="/images/hero/scientist.png"
+                alt="Dr. Kombucha - Rigor Científico"
+                className="balanced-image shadow-xl"
+              />
+            </picture>
           </div>
-        </section>
-
-        {/* NUESTRA MISIÓN SECTION */}
-        <section className="py-32 bg-white" id="mision">
-          <div className="container mx-auto px-6 max-w-4xl text-center">
-            <h2 className="text-4xl md:text-6xl font-serif mb-12 text-brand-primary">Nuestra misión</h2>
-            <div className="text-lg md:text-xl text-brand-text-muted leading-relaxed space-y-6">
-              <p>
-                Elaborar kombucha artesanal en Puerto Vallarta con un enfoque honesto y responsable, respetando el proceso de fermentación y priorizando la calidad del producto final.
-              </p>
-              <p>
-                Buscamos ofrecer una bebida bien hecha, consistente y disfrutable, sin promesas exageradas ni discursos milagrosos.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* TESTIMONIOS SECTION - 3 COLUMN GRID */}
-        <section className="py-32 bg-brand-bg-soft" id="testimonios">
-          <div className="section-container">
-            <h2>Lo que dicen quienes ya disfrutan Dr. Kombucha</h2>
-            <p className="text-center text-lg text-brand-text-muted mb-20 max-w-3xl mx-auto">
-              Nada habla mejor de nuestro producto que la experiencia real de quienes lo han probado. Nuestros clientes destacan el sabor, la frescura y el carácter artesanal de Dr. Kombucha.
+          <div className="doctor-text-balanced">
+            <h2>Dr. Kombucha</h2>
+            <p>
+              Escogió el proceso de fermentación más saludable y los mejores ingredientes locales para obtener una bebida funcional deliciosa, con cero químicos y elaborada artesanalmente.
             </p>
-            <div className="testimonials-grid">
-              {[
-                {
-                  name: "Ana G.",
-                  text: "Me encanta el sabor y lo refrescante que es. Se nota que es un producto artesanal y bien cuidado."
-                },
-                {
-                  name: "Luis M.",
-                  text: "La kombucha tiene un perfil muy equilibrado, no es agresiva ni empalagosa. Se volvió parte de mi rutina."
-                },
-                {
-                  name: "María R.",
-                  text: "Excelente calidad y sabor auténtico. El proceso artesanal se nota en cada sorbo."
-                }
-              ].map((testi, i) => (
-                <div key={i} className="testimonial-card">
-                  <p className="text-xl mb-8 text-brand-text-muted leading-relaxed font-sans">{testi.text}</p>
-                  <p className="font-sans font-bold text-brand-primary tracking-widest">— {testi.name}</p>
-                </div>
-              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FLAVORS SECTION */}
+      <section className="flavors">
+        <div className="section-container">
+          <h2>Descubre tu sabor favorito</h2>
+          <div className="flavors-grid">
+            <div className="flavor-card">
+              <div className="flavor-image">
+                <Image src="/images/hero/natural.png" alt="Natural" width={300} height={400} />
+              </div>
+              <h3>Natural</h3>
+              <p>Sabor puro y auténtico</p>
+            </div>
+            <div className="flavor-card">
+              <div className="flavor-image">
+                <Image src="/images/hero/granada.png" alt="Granada" width={300} height={400} />
+              </div>
+              <h3>Granada</h3>
+              <p>Frutal y refrescante</p>
+            </div>
+            <div className="flavor-card">
+              <div className="flavor-image">
+                <Image src="/images/hero/mango.png" alt="Mango" width={300} height={400} />
+              </div>
+              <h3>Mango</h3>
+              <p>Tropical y delicioso</p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* PREGUNTAS FRECUENTES SECTION */}
-        <section className="py-32 bg-white" id="faq">
-          <div className="container mx-auto px-6 max-w-4xl">
-            <h2 className="text-4xl md:text-6xl font-serif text-center mb-20 text-brand-primary">Preguntas frecuentes</h2>
-            <div className="space-y-10">
-              {[
-                {
-                  q: "¿Cuántas calorías tiene la kombucha?",
-                  a: "Aproximadamente 30–40 calorías por porción de 250 ml, dependiendo del sabor y del grado de fermentación."
-                },
-                {
-                  q: "¿Cómo puedo hacer un pedido?",
-                  a: "Puedes hacer tu pedido directamente por WhatsApp y elegir tu paquete disponible."
-                },
-                {
-                  q: "¿Cómo debo conservar la kombucha?",
-                  a: "Al ser una bebida fermentada, debe mantenerse refrigerada para conservar mejor su sabor y características."
-                },
-                {
-                  q: "¿En qué presentaciones viene?",
-                  a: "Se vende en paquetes de seis botellas de 355 ml, con sabores a elegir."
-                }
-              ].map((faq, i) => (
-                <div key={i} className="border-b border-brand-accent/10 pb-8">
-                  <h3 className="text-2xl font-serif font-bold mb-4 text-brand-primary">{faq.q}</h3>
-                  <p className="text-lg text-brand-text-muted leading-relaxed">{faq.a}</p>
-                </div>
-              ))}
+      {/* TESTIMONIALS SECTION - 3 COLUMNS */}
+      <section className="testimonials">
+        <div className="section-container">
+          <h2>Lo que dicen nuestros clientes</h2>
+          <div className="testimonials-grid-symmetric">
+            <div className="testimonial-card">
+              <p className="testimonial-text">"Desde que tomé Dr Kombucha, siento que mi digestión ha mejorado notablemente."</p>
+              <p className="testimonial-author">– Ana G.</p>
+            </div>
+            <div className="testimonial-card">
+              <p className="testimonial-text">"La frescura y el sabor auténtico artesanal son únicos. Me encanta sentir que cuido mi cuerpo."</p>
+              <p className="testimonial-author">– Luis M.</p>
+            </div>
+            <div className="testimonial-card">
+              <p className="testimonial-text">"Excelente alternativa saludable. Se nota el rigor científico detrás del producto."</p>
+              <p className="testimonial-author">– Roberto S.</p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA FINAL SECTION */}
-        <section className="py-32 bg-brand-bg-soft text-center">
-           <h2>¿Listo para probar kombucha artesanal?</h2>
-           <p className="text-xl text-brand-text-muted mb-16 max-w-2xl mx-auto">
-             Haz tu pedido directamente por WhatsApp. Es rápido y sencillo.
-           </p>
-           <button 
-              onClick={() => handleWhatsAppClick("Hola! Quiero hacer mi pedido de Dr. Kombucha.")}
-              className="cta-button"
-            >
-              Hacer Pedido
-            </button>
-        </section>
-
-        <footer className="py-20 bg-brand-dark text-brand-bg/50 text-center">
-          <p className="text-sm tracking-[0.3em] uppercase mb-2">Dr. Kombucha</p>
-          <p className="text-xs tracking-[0.2em]">Kombucha artesanal, hecha con respeto por el proceso.</p>
-          <p className="text-xs mt-4 opacity-40">© {new Date().getFullYear()} — Puerto Vallarta, México</p>
-        </footer>
-      </main>
-    </>
+      {/* FINAL CTA & FOOTER */}
+      <section className="final-cta">
+        <div className="section-container">
+          <h2>¿Listo para probar kombucha artesanal del Puerto?</h2>
+          <a href="#" onClick={(e) => { e.preventDefault(); handleWhatsAppClick("¡Hola! Estoy interesado en el paquete de introducción de Dr. Kombucha."); }} className="cta-button-final">
+            ¡CLICK PARA CHATEAR!
+          </a>
+        </div>
+      </section>
+      
+      <footer className="footer">
+        <div className="footer-content-centered">
+          <img src="/images/hero/logotipo-nuevo1.png" alt="Dr. Kombucha" className="footer-logo-centered" />
+          <h3>DR. KOMBUCHA</h3>
+          <p>© 2025 Dr. Kombucha. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+    </main>
   );
 }
