@@ -21,8 +21,8 @@
   --card-padding: 40px;
 
   /* Typography */
-  --font-heading: 'Playfair Display', 'Lora', serif;
-  --font-body: 'Lora', serif;
+  --font-heading: 'Instrument Serif', serif;
+  --font-body: 'Inter', sans-serif;
   --line-height-heading: 1.1;
   --line-height-body: 1.8;
 
@@ -202,6 +202,12 @@ section {
   background: var(--color-accent-hover);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(76, 175, 158, 0.5);
+}
+
+/* Centered hero logo */
+.logo-img-centered {
+  width: 250px;
+  height: auto;
 }
 
 /* Hide Popup / Floating CTA - User hates it */

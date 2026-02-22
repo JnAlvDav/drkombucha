@@ -14,49 +14,50 @@ export default function Page() {
       <Navbar />
       <main className="min-h-screen bg-brand-bg text-brand-text font-sans">
         
-        {/* HERO SECTION - TWO COLUMN LAYOUT */}
+        {/* HERO SECTION - CENTERED LAYOUT */}
         <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden bg-brand-bg">
-          <div className="container mx-auto max-w-[1180px] relative z-10">
-            {/* Two-column grid: Text left, Image right */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Left Column: Text Content */}
-              <div className="text-left">
-                <h1 className="text-5xl md:text-7xl font-serif font-black mb-6 tracking-tighter text-brand-text leading-none">
-                  Dr. Kombucha
-                </h1>
-                <p className="text-2xl md:text-3xl mb-8 font-bold text-brand-accent tracking-wide">
-                  Kombucha artesanal de Puerto Vallarta
-                </p>
-                <div className="mb-12">
-                  <p className="text-lg md:text-xl text-brand-text-muted leading-relaxed mb-4">
-                    Bebida fermentada elaborada con té, azúcar y fermentación cuidada.
-                  </p>
-                  <p className="text-lg md:text-xl text-brand-text-muted leading-relaxed">
-                    Sabor honesto, proceso artesanal y producción local.
-                  </p>
-                </div>
-                <button 
-                  onClick={() => handleWhatsAppClick("Hola! Me gustaría hacer un pedido de Dr. Kombucha.")}
-                  className="px-12 py-5 bg-brand-accent text-white rounded-full font-bold text-xl hover:bg-brand-accent-hover transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 uppercase tracking-widest"
-                >
-                  Pedir Ahora
-                </button>
-              </div>
-
-              {/* Right Column: Product Image */}
-              <div className="flex justify-center items-center">
-                <div className="relative w-full max-w-md">
-                  <Image
-                    src="/images/hero/natural.webp"
-                    alt="Dr. Kombucha Natural"
-                    width={600}
-                    height={800}
-                    priority
-                    className="w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              </div>
+          <div className="container mx-auto max-w-[1180px] relative z-10 text-center">
+            {/* Centered Logo */}
+            <div className="flex justify-center mb-8">
+              <Image
+                src="/images/hero/logotipo-nuevo1.webp"
+                alt="Dr. Kombucha Logo"
+                width={250}
+                height={250}
+                priority
+                className="logo-img-centered"
+              />
             </div>
+
+            {/* Title */}
+            <h1 className="text-5xl md:text-7xl font-serif mb-4 tracking-tighter text-brand-text leading-none">
+              Dr. Kombucha
+            </h1>
+
+            {/* Subtitle */}
+            <p className="text-xl md:text-2xl mb-10 font-bold text-brand-primary tracking-widest uppercase">
+              SABOR ARTESANAL DEL PUERTO
+            </p>
+
+            {/* Hero Image - 3 Bottles */}
+            <div className="flex justify-center mb-12">
+              <Image
+                src="/images/hero/hero.webp"
+                alt="Dr. Kombucha - Tres botellas artesanales"
+                width={800}
+                height={600}
+                priority
+                className="w-full max-w-2xl h-auto drop-shadow-2xl"
+              />
+            </div>
+
+            {/* CTA Button */}
+            <button
+              onClick={() => handleWhatsAppClick("Hola! Me gustaría hacer un pedido de Dr. Kombucha.")}
+              className="px-12 py-5 bg-brand-primary text-white rounded-full font-bold text-xl hover:bg-brand-accent transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 uppercase tracking-widest"
+            >
+              Pedir Ahora
+            </button>
           </div>
         </section>
 
