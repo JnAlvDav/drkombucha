@@ -2,25 +2,25 @@ import "./globals.css";
 import GoogleAnalytics from '../components/GoogleAnalytics';
 
 export const metadata = {
-  title: "Dr. Kombucha | Kombucha artesanal en Puerto Vallarta",
+  title: "Dr Kombucha | Sabor Artesanal del Puerto — Puerto Vallarta, Jalisco",
   description:
-    "Kombucha artesanal elaborada en Puerto Vallarta, Jalisco. Fermentación cuidada, sabores naturales y entrega local.",
-  keywords: ["kombucha", "kombucha artesanal", "Puerto Vallarta", "probióticos", "fermentación", "bebida saludable", "México", "Jalisco"],
-  authors: [{ name: "Dr. Kombucha" }],
+    "Dr Kombucha: kombucha artesanal elaborada en Puerto Vallarta, Jalisco. Six-pack $330 MXN. Sabores Granada, Natural y Mango. Pide por WhatsApp.",
+  keywords: ["kombucha", "kombucha artesanal", "Puerto Vallarta", "Jalisco", "fermentación", "bebida artesanal", "México", "six-pack kombucha", "Granada", "Mango", "Natural"],
+  authors: [{ name: "Dr Kombucha" }],
   openGraph: {
-    title: "Dr. Kombucha | Kombucha artesanal en Puerto Vallarta",
+    title: "Dr Kombucha | Sabor Artesanal del Puerto",
     description:
-      "Kombucha artesanal elaborada en Puerto Vallarta, Jalisco. Fermentación cuidada, sabores naturales y entrega local.",
+      "Kombucha artesanal de Puerto Vallarta, Jalisco. Six-pack $330 MXN. Sabores Granada, Natural y Mango. Pide por WhatsApp.",
     url: "https://drkombucha.net",
-    siteName: "Dr. Kombucha",
+    siteName: "Dr Kombucha",
     locale: "es_MX",
     type: "website",
     images: [
       {
-        url: "https://drkombucha.net/images/hero/kombucha-bottles.webp",
+        url: "https://drkombucha.net/images/hero/hero.webp",
         width: 1200,
         height: 630,
-        alt: "Dr. Kombucha - Kombucha artesanal",
+        alt: "Dr Kombucha - tres botellas de kombucha artesanal: Granada, Natural y Mango",
       },
     ],
   },

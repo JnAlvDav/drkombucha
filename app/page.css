@@ -150,12 +150,14 @@ section {
   gap: var(--spacing-small);
 }
 
+/* Premium benefit card: green top border + soft shadow */
 .benefit-card, .flavor-card, .testimonial-card, .faq-item {
   background: white;
   padding: 2.5rem;
   border-radius: 1.5rem;
   border: 1px solid #E9E4DE;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-top: 4px solid #2D5A27;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
   transition: all 0.3s ease;
 }
 
@@ -178,6 +180,17 @@ section {
   text-align: center; 
   color: var(--color-muted);
   line-height: 1.7;
+}
+
+/* Step number for "Cómo Pedir" section */
+.step-number {
+  font-family: 'Instrument Serif', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2D5A27;
+  opacity: 0.25;
+  margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
 /* Buttons (PR #12 Enhanced) */

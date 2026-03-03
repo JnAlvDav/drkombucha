@@ -16,9 +16,9 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Inicio', id: 'home' },
-    { name: 'Beneficios', id: 'beneficios' },
     { name: 'Sabores', id: 'sabores' },
-    { name: 'Contacto', id: 'contacto' }
+    { name: 'Cómo Pedir', id: 'como-pedir' },
+    { name: 'FAQ', id: 'faq' }
   ];
 
   return (
