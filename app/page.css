@@ -1,215 +1,464 @@
-/* ========================================
-   CSS VARIABLES - Design System (REMASTERED)
-   ======================================== */
 :root {
-  /* Colors - Pure, Classy, Retro Costeña */
-  --color-bg: #FCF8F2; /* Creamy off-white, no more brown */
-  --color-text: #2D2926; /* Deep charcoal */
-  --color-muted: #5C5854;
-  --color-accent: #3D6B5E; /* Forest Kombucha Green */
-  --color-accent-hover: #2D4F46;
-  --color-cta: #D48C45; /* Golden Sand */
-  --color-cta-hover: #B57436;
-  --color-accent-soft: #E9F1EF;
-  
-  /* Spacing - Giving it "AIR" */
-  --max-width: 1200px;
-  --text-max-width: 800px;
-  --section-padding-desktop: 140px;
-  --section-padding-mobile: 80px;
-  --section-gap: 100px;
-  --card-padding: 40px;
-
-  /* Typography */
-  --font-heading: 'Playfair Display', 'Lora', serif;
-  --font-body: 'Lora', serif;
-  --line-height-heading: 1.1;
-  --line-height-body: 1.8;
-
-  /* Visual Hierarchy - Heading Sizes with 30% variations (PR #12) */
-  --h1-size: 4rem;
-  --h2-size: 2.8rem; /* 30% smaller than H1 */
-  --h3-size: 1.96rem; /* 30% smaller than H2 */
-  
-  /* Consistent Spacing (PR #12) */
-  --spacing-section: 80px;
-  --spacing-large: 4rem;
-  --spacing-medium: 3rem;
-  --spacing-small: 2rem;
-  --spacing-xs: 1.5rem;
-  
-  /* Standardized Container Width (PR #12) */
-  --container-max-width: 1180px;
+--color-bg: #f9f9f9;
+--color-text: #333333;
+--color-muted: #555555;
+--color-accent: #4CAF9E;
+--color-accent-hover: #3F9185;
+--color-accent-soft: #EAF7F5;
+--max-width: 1180px;
+--text-max-width: 680px;
+--section-padding-desktop: 96px;
+--section-padding-mobile: 48px;
+--radius-sm: 4px;
+--radius-md: 12px;
+--line-height-body: 1.75;
+--font-main: 'Roboto', sans-serif;
+--font-title: 'Montserrat', sans-serif;
+/* Visual Hierarchy - Heading Sizes with 30% variations */
+--h1-size: 4rem;
+--h2-size: 2.8rem; /* 30% smaller than H1 */
+--h3-size: 1.96rem; /* 30% smaller than H2 */
+/* Consistent Spacing */
+--spacing-section: 80px;
+--spacing-large: 4rem;
+--spacing-medium: 3rem;
+--spacing-small: 2rem;
+--spacing-xs: 1.5rem;
 }
 
-/* ========================================
-   BASE STYLES
-   ======================================== */
-* { box-sizing: border-box; }
-
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-main);
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: var(--line-height-body);
   margin: 0;
-  padding: 0;
-  overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-heading);
+/* VISUAL HIERARCHY - Typography */
+h1, h2, h3 {
+  font-family: var(--font-title);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
   color: var(--color-text);
-  line-height: var(--line-height-heading);
-  font-weight: 700;
-  margin: 0 0 1.5rem 0;
-  letter-spacing: -0.01em;
 }
 
-/* PR #12 Visual Hierarchy - 30% heading progression */
-h1 { 
-  font-size: var(--h1-size); 
-  font-weight: 900;
+h1 {
+  font-size: var(--h1-size);
   letter-spacing: -1px;
 }
-h2 { 
-  font-size: var(--h2-size); 
-  font-weight: 800;
+
+h2 {
+  font-size: var(--h2-size);
   letter-spacing: -0.5px;
-  text-align: center; 
-  margin-bottom: var(--spacing-small); 
+  margin-bottom: var(--spacing-small);
 }
-h3 { 
-  font-size: var(--h3-size); 
+
+h3 {
+  font-size: var(--h3-size);
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
-p {
-  font-size: 1.125rem;
-  color: var(--color-muted);
-  margin-bottom: 1.5rem;
-}
-
-/* ========================================
-   HERO SECTION - TWO COLUMN LAYOUT
-   ======================================== */
-.hero {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--spacing-section) 24px;
-  position: relative;
-  background-color: var(--color-bg);
-  background-image: 
-    radial-gradient(circle at 20% 30%, rgba(212, 140, 69, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(61, 107, 94, 0.05) 0%, transparent 40%);
-}
-
-/* Simulated Bokeh Bubbles */
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: 
-    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.4) 0%, transparent 10%),
-    radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 15%),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 20%),
-    radial-gradient(circle at 30% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 12%);
-  filter: blur(40px);
-  pointer-events: none;
-}
-
-/* Note: Hero layout now uses Tailwind utility classes directly in JSX */
-
-/* ========================================
-   CLEAN SECTIONS (PR #12 Enhanced)
-   ======================================== */
+/* CONSISTENT SECTION STYLING */
 section {
   padding: var(--spacing-section) 24px;
-  max-width: var(--container-max-width);
-  margin: 0 auto;
 }
 
-.section-container {
-  max-width: var(--container-max-width);
-  margin: 0 auto;
-  padding: 0 24px;
+.page {
+  margin: 0;
+  padding: 0;
 }
 
-.benefits, .flavors, .faq, .testimonials {
-  background: transparent !important; /* Remove those ugly gradients */
-  box-shadow: none !important;
-}
-
-/* PR #12 - 3-column symmetric grids */
-.benefits-grid, .flavors-grid, .testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-small);
-}
-
-.benefit-card, .flavor-card, .testimonial-card, .faq-item {
+/* SYMMETRIC HERO CLASSES */
+.hero {
+  padding: var(--spacing-section) 24px;
   background: white;
-  padding: 2.5rem;
-  border-radius: 1.5rem;
-  border: 1px solid #E9E4DE;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-}
-
-.benefit-card:hover, .flavor-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
-}
-
-/* Typography fix for cards */
-.benefit-card { 
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
-.benefit-card h3 { 
-  margin-bottom: 1rem; 
-  text-align: center; 
+
+.hero-wrapper-centered {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-logo-centered {
+  margin-bottom: var(--spacing-small);
+}
+
+.logo-img-centered {
+  width: 250px;
+  height: auto;
+}
+
+.hero-title-centered {
+  font-size: var(--h1-size);
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -1px;
   color: var(--color-text);
 }
-.benefit-card p { 
-  font-size: 1rem; 
-  text-align: center; 
-  color: var(--color-muted);
-  line-height: 1.7;
+
+.hero-subtitle-centered {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-top: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-/* Buttons (PR #12 Enhanced) */
-.cta-button, .cta-button-hero {
+.hero-tagline-centered {
+  font-size: 1.25rem;
+  color: var(--color-muted);
+  margin: var(--spacing-xs) 0 var(--spacing-medium);
+  max-width: 600px;
+}
+
+.hero-product-centered {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: var(--spacing-medium);
+}
+
+.product-img-centered {
+  width: 100%;
+  height: auto;
+  border-radius: 2rem;
+}
+
+.shadow-3xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.cta-button-hero-centered {
   background: var(--color-accent);
   color: white;
   padding: 1.25rem 3rem;
-  font-size: 1.125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
   border-radius: 9999px;
-  border: none;
-  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 700;
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
   box-shadow: 0 4px 14px rgba(76, 175, 158, 0.4);
 }
 
-.cta-button:hover, .cta-button-hero:hover {
+.cta-button-hero-centered:hover {
   background: var(--color-accent-hover);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(76, 175, 158, 0.5);
 }
 
-/* Hide Popup / Floating CTA - User hates it */
-.floating-cta {
-  display: none !important;
+/* GRID SYMMETRY */
+.section-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-/* PR #12 - Responsive Design */
+/* KOMBUCHA INFO SECTION */
+.kombucha-info {
+  background: white;
+  text-align: center;
+}
+
+.kombucha-info h2 {
+  color: var(--color-text);
+  margin-bottom: var(--spacing-small);
+}
+
+.info-text {
+  font-size: 1.25rem;
+  color: var(--color-muted);
+  max-width: var(--text-max-width);
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* BENEFITS SECTION */
+.benefits {
+  background: var(--color-bg);
+}
+
+.benefits h2 {
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-large);
+}
+
+.benefits-grid-symmetric {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-small);
+  margin-top: var(--spacing-medium);
+}
+
+.benefit-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+  text-align: center;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.benefit-card h3 {
+  color: var(--color-text);
+  margin-bottom: 1.25rem;
+  font-size: var(--h3-size);
+}
+
+.benefit-card p {
+  color: var(--color-muted);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.benefits-cta {
+  text-align: center;
+  margin-top: var(--spacing-large);
+}
+
+.cta-button {
+  background: var(--color-accent);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 14px rgba(76, 175, 158, 0.4);
+}
+
+.cta-button:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(76, 175, 158, 0.5);
+}
+
+/* BALANCED SECTION 50/50 - DOCTOR SECTION */
+.doctor-section-balanced {
+  background: white;
+}
+
+.balanced-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-large);
+  align-items: center;
+}
+
+.doctor-image-container {
+  width: 100%;
+}
+
+.doctor-image-container img {
+  width: 100%;
+  border-radius: 2rem;
+}
+
+.balanced-image {
+  width: 100%;
+  height: auto;
+}
+
+.doctor-text-balanced h2 {
+  font-size: var(--h2-size);
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text);
+}
+
+.doctor-text-balanced p {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+/* FLAVORS SECTION */
+.flavors {
+  background: var(--color-bg);
+}
+
+.flavors h2 {
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-large);
+}
+
+.flavors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-small);
+  margin-top: var(--spacing-medium);
+}
+
+.flavor-card {
+  background: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.flavor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.flavor-image {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+}
+
+.flavor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flavor-card h3 {
+  font-size: var(--h3-size);
+  margin: 1.5rem 0 0.5rem;
+  padding: 0 1.5rem;
+  color: var(--color-text);
+}
+
+.flavor-card p {
+  color: var(--color-muted);
+  padding: 0 1.5rem 1.5rem;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* TESTIMONIALS SYMMETRY */
+.testimonials {
+  background: white;
+}
+
+.testimonials h2 {
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-large);
+}
+
+.testimonials-grid-symmetric {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-small);
+}
+
+.testimonial-card {
+  background: var(--color-accent-soft);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* FINAL CTA SECTION */
+.final-cta {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+  text-align: center;
+  color: white;
+}
+
+.final-cta h2 {
+  color: white;
+  margin-bottom: var(--spacing-small);
+  font-size: var(--h2-size);
+}
+
+.cta-button-final {
+  background: white;
+  color: var(--color-accent);
+  padding: 1.25rem 3rem;
+  border-radius: 9999px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+}
+
+.cta-button-final:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+/* FOOTER CENTERING */
+.footer {
+  padding: var(--spacing-large) 24px;
+  background: #f1f1f1;
+  text-align: center;
+}
+
+.footer-content-centered {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-logo-centered {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+.footer h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: var(--color-text);
+}
+
+.footer p {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+}
+
+/* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
   :root {
     --h1-size: 2.8rem;
@@ -221,21 +470,32 @@ section {
     --spacing-small: 1.5rem;
   }
 
-  /* Stack Hero layout on tablet */
-  .hero-wrapper {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-medium);
-  }
-
-  .hero-content {
-    text-align: center;
-  }
-
-  .benefits-grid,
-  .testimonials-grid,
+  .benefits-grid-symmetric,
+  .testimonials-grid-symmetric,
+  .balanced-grid,
   .flavors-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+  
+  .hero-title-centered {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle-centered {
+    font-size: 1.25rem;
+  }
+
+  .hero-tagline-centered {
+    font-size: 1.1rem;
+  }
+
+  .section-container {
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 56px 20px;
   }
 
   .benefit-card,
@@ -244,8 +504,8 @@ section {
     padding: 2rem;
   }
 
-  .cta-button,
-  .cta-button-hero {
+  .cta-button-hero-centered,
+  .cta-button-final {
     padding: 1rem 2rem;
     font-size: 1.1rem;
   }
@@ -256,6 +516,14 @@ section {
     --h1-size: 2.2rem;
     --h2-size: 1.6rem;
     --h3-size: 1.2rem;
+  }
+
+  .hero-title-centered {
+    font-size: 2.2rem;
+  }
+
+  .logo-img-centered {
+    width: 180px;
   }
 
   .benefit-card h3,
